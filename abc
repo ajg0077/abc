@@ -1,0 +1,5185 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+
+
+
+
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" href="/ddfs/images/logo-ddfs-favicon.png" type="image/png">
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<title></title>
+		
+
+        	
+	
+	
+		 <link rel="stylesheet" href="/ddfs/css/bootstrap/bootstrap.min.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/ddfs/css/bootstrap/main-style.css" type="text/css" media="screen" />
+	
+	<link rel="stylesheet" href="/ddfs/css/font-awesome.min.css" type="text/css" media="screen" />
+	
+	<link type="text/css" href="/ddfs/css/custom/jquery-ui.min.css" rel="stylesheet" />	
+	<link type="text/css" href="/ddfs/css/data_table_jui-min.css" rel="stylesheet" />
+	<link type="text/css" href="/ddfs/css/chosen/chosen.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/ddfs/css/master-min.css" type="text/css" media="screen" />
+	<link type="text/css" href="/ddfs/css/jquery-tagsinput.css" rel="stylesheet" />
+	<link type="text/css" href="/ddfs/css/menubar-min.css" rel="stylesheet"/>
+	
+	<link type="text/css" href="/ddfs/css/fileview-annotation.css" rel="stylesheet"/>
+
+	<link rel="stylesheet" type="text/css" href="/ddfs/scripts/EasyTree/skin-win8/ui.easytree.css"/>
+	<link type="text/css" href="/ddfs/css/jquery.eeyellow.Timeline.css" rel="stylesheet" />
+	
+	
+	
+	<link type="text/css" href="/ddfs/css/jquery.dialogr.css" rel="stylesheet" />
+	<link type="text/css" href="/ddfs/css/layout-default-1.4.3.css" rel="stylesheet" /> 
+	
+	 <link type="text/css" href="/ddfs/scripts/dataTable_1.10/jquery.dataTables.min.css" rel="stylesheet" />
+ 	<link type="text/css" href="/ddfs/scripts/dataTable_1.10/responsive.dataTables.min.css" rel="stylesheet" />
+		<link type="text/css" href="/ddfs/css/custom-styles.css" rel="stylesheet" />
+	
+	<script type="text/javascript" src="/ddfs/scripts/dataTable_1.10/jquery-1.12.3.js"></script>
+
+	<script type="text/javascript" src="/ddfs/scripts/jquery-migrate-1.2.1.js"></script>
+	<script type="text/javascript" src="/ddfs/scripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/ddfs/scripts/jquery-ui-1.11.1.min.js"></script>
+		<script type="text/javascript" src="/ddfs/scripts/bootstrap/bootstrap.min.js"></script>
+		<script> 
+			var btn=$.fn.button.noConflict();
+			$.fn.btn=btn;
+		</script>
+		    
+	<script type="text/javascript" src="/ddfs/scripts/jquery.relatedselects.min.js"></script>
+	
+	
+	<script type="text/javascript" src="/ddfs/scripts/dataTable_1.10/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="/ddfs/scripts/dataTable_1.10/dataTables.responsive.min.js"></script>
+	
+	
+	<script type="text/javascript" src="/ddfs/scripts/jquery.timers-1.2.js"></script>
+	<script type="text/javascript" src="/ddfs/scripts/jquery.form-min.js"></script>
+	<script type="text/javascript" src="/ddfs/scripts/jquery.jstree.js"></script>
+	<script type="text/javascript" src="/ddfs/ckeditor_4.1.1/ckeditor.js"></script>
+	<script type="text/javascript" src="/ddfs/scripts/jquery-tagsinput-min.js"></script>
+	<script type="text/javascript" src="/ddfs/scripts/master.js?ver=4.5.2"></script>
+	<script type="text/javascript" src="/ddfs/scripts/meeting.js"></script>
+	<script type="text/javascript" src="/ddfs/scripts/jquery.jeditable.js"></script>
+    <script type="text/javascript" src="/ddfs/scripts/jquery.dataTables.editable.js"></script>
+	<script type="text/javascript" src="/ddfs/scripts/chosen/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="/ddfs/scripts/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="/ddfs/scripts/jquery.balloon.min.js"></script>
+
+    <script type="text/javascript" src="/ddfs/scripts/ui.dialogr.js"></script>
+
+    <script type="text/javascript" src="/ddfs/viewer/js/viewer-annotate.js"></script>
+    <script type="text/javascript" src="/ddfs/scripts/jquery.layout-1.4.3.js"></script>
+    <script type="text/javascript" src="/ddfs/scripts/EasyTree/jquery.easytree.js"></script>
+
+ <script type="text/javascript" src="/ddfs/scripts/jquery.eeyellow.Timeline.js"></script>
+ <script type="text/javascript" src="/ddfs/scripts/pagination/jquery.twbsPagination.min.js"></script>
+     <script type="text/javascript" src="/ddfs/scripts/scrollbar.js"></script>
+ 
+
+    <script>
+    $(document).everyTime(1000,"autoChildrenClose",function(){
+		if(true!==window.parentWindowAvailable()){
+			self.close();
+		}
+	});		
+	var timeOut=false;
+	$(document).everyTime(120000,"sessionCheck",function(){
+		if(false===timeOut){
+			$.ajax({
+				error:function(jqXHR, textStatus, errorThrown) {
+					$("body").empty().load('/ddfs/sessionExpired.html');
+					timeOut=true;
+				},
+				dataType:'json',
+				url:"/ddfs/common/sessionCheck.do?poll=true",
+				success:function(data, textStatus, jqXHR){
+					//do something
+				}
+			});
+		}
+	});
+		
+	</script>
+	
+	<!--[if lte IE 8]>
+		<script>
+			if(screen.width <= 1024){
+				$('head').append('<link rel="stylesheet" href="/ddfs/css/ie8.css" type="text/css" media="screen" />');
+			}
+		</script>
+	<![endif]-->
+	
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="translitration" title="Malayalam" style="display:none">
+			<iframe frameborder="0" id="languageFrame" width="625px" height="100%" style="border:none; float:left;">
+					  <p>Your browser does not support iframes.</p>
+			</iframe>
+</div>
+		<script type="text/javascript">
+			var editorId = "";
+			$(document).ready(function() {
+				$.ajaxSetup({
+					cache: false,
+				    beforeSend: function (xhr)
+				    {
+				       xhr.setRequestHeader("Authorization",'null');        
+				    }
+				});
+				$(document).everyTime(100, 'autoclose', function(i) {
+					if (null != window.opener) {
+						if(typeof( window.opener!=null ) ) {
+							if( window.opener.closed ) {
+								window.close();
+							}
+						}
+					} else {
+						var session = '';
+						if('EMAIL' != session ){
+							window.close();
+						}
+					}
+				});
+
+				
+				
+				initializeOnClickCalendar('03.04.2019');
+				styleSubmitButtons();
+				handleSessionTimeoutScreen();
+				initializeSpinner();
+
+				// Intercepts all links with name 'deleteEntity' and show a confirmation dialog 
+				// defined by the div with id 'dialog'. On confirmation, a GET request is send and 
+				// the tab panel is loaded with the target.
+				$('#componentview').off('click', "a[name^='deleteEntity']").on('click', "a[name^='deleteEntity']", function(e) {	
+					e.preventDefault();
+					return displayDeleteDialog(this, $('#componentview'));
+				  });
+
+				$('#componentview').off('click', "input[name^='confirmEntity']").on('click', "input[name^='confirmEntity']", function(e) {
+					e.preventDefault();
+					return displayDeleteDialog(this, $('#componentview'));
+				  });
+
+				$('#componentview').off('click', "a[name^='addAttachment']").on('click', "a[name^='addAttachment']", function(e) {	
+					e.preventDefault();
+					var $form = $(this).closest('form');
+					return displayAttachmentDialog();
+				  });	
+				 
+				$('#componentview').off('click', "a[name^='addAnnexureAttachment']").on('click', "a[name^='addAnnexureAttachment']", function(e) {
+					e.preventDefault();
+					var $form = $(this).closest('form');
+					return displayAnnexureAttachmentDialog();
+				  });
+
+				$('#componentview').off('click', "a[name^='addDraftAttachment']").on('click', "a[name^='addDraftAttachment']", function(e) {
+					e.preventDefault();
+					var $form = $(this).closest('form');
+					return displayDraftAttachmentDialog();
+				  });
+
+				  
+				$('#componentview').off('click', "a[name^='sacnAttachment']").on('click', "a[name^='sacnAttachment']", function(e) {
+					e.preventDefault();
+					return displayScanAttachmentDialog();
+				  });
+				$('#componentview').off('click', "span[class^='ddfs-seat-info']",function()
+				{
+					 showUserDetails(this);
+				});
+			
+				// Intercepts all links which do not have names as 'deleteEntity' and load the contents
+				// of the tab panel with the target using a GET request.
+				$('#componentview').off('click', 
+						"a[name!='deleteEntity'][name!='nonAjaxLink'][name!='addAttachment'][name!='addAnnexureAttachment'][name!='addDraftAttachment'][name!='sacnAttachment'][name!='openInNewWindow'][id!='openInNewWindow']")
+						.on('click', 
+						"a[name!='deleteEntity'][name!='nonAjaxLink'][name!='addAttachment'][name!='addAnnexureAttachment'][name!='addDraftAttachment'][name!='sacnAttachment'][name!='openInNewWindow'][id!='openInNewWindow']", 
+						function(e) {
+							e.preventDefault();
+							if(!(
+									(null != $(this).attr("id") && $(this).attr("id").indexOf("cke") != -1)
+									|| $(this).parents().hasClass('cke')
+								)) {
+								if(!$(this).hasClass('fg-button')) {
+									return handleLinkClick(this, $('#componentview'));
+								}
+							}
+						}
+				);
+
+				var uploadAttachmentOptions = {
+						dataType: 'json',
+						beforeSubmit: function(formdata, form, options){
+						},
+						success:  function(response){
+							if (!response.ERROR){
+								var data = response.DATA;
+								openPopUpWindow(data);
+							} else{
+								openPopUpWindow('Upload Failed - '+response.ERROR_MSG);
+							}
+						}
+				}; 
+
+
+				// Intercepts all form submissions - to make it happen inside the tab panel
+				$('#componentview').off('submit', 'form[name!="uploadAjaxForm"][name!="nonAjaxForm"][id!="nonAjaxForm"][id!="noteEditor"]')
+						.on('submit', 'form[name!="uploadAjaxForm"][name!="nonAjaxForm"][id!="nonAjaxForm"][id!="noteEditor"]', 
+					function(e) {
+							e.preventDefault();
+							handleFormSubmission(this, $('#componentview'));	
+							return false;
+					});
+						 
+				// This is for the department selector dropdown, which colud be placed in multiple pages.
+				// Dropdown should be placed only one per page.
+				$('#componentview').off('change', "select[id='deptSelector']").on('change', "select[id='deptSelector']", 
+						function(e) {
+							e.preventDefault();
+							return handleDepartmentChange($('#componentview'));
+						}
+				);
+
+				/*
+				$('#componentview').intercept('click', "input[class^='datepickericon']", 
+						function() { 
+							initializeOnClickCalendar($('#componentview'));
+						}
+				);
+				*/
+
+				// To partial submit the form containing the dropdown.For example, if you have two dropdowns
+				// in the page for department and users (in the department), you need to show the
+				// users dropdown based on the value selected for the department.
+				$('#componentview').off('change', "select[id^='partialSubmit']").on('change', "select[id^='partialSubmit']", 
+						function(e) {
+							e.preventDefault();
+							return partialSubmit($(this), $('#componentview'));
+						});
+				$('#componentview').off('change', "select[name^='partialSubmit']").on('change', "select[name^='partialSubmit']",  
+						function(e) {
+							e.preventDefault();
+							return partialSubmit($(this), $('#componentview'));
+						});
+
+				//Reset button
+				$('#componentview').off('click', "input[id^='resetBtn']").on('click', "input[id^='resetBtn']",  
+						function(e) {
+							e.preventDefault();
+							return resetForm($(this));
+						});
+
+
+				$('#componentview').off('click', "span[id^='toggler']").on('click', "span[id^='toggler']", 
+						function(e){
+							e.preventDefault();
+							return toggle($(this));
+				 		}
+		 		);		
+
+				$('body').off('click', "span[id^='advFilterBtn']").on('click', "span[id^='advFilterBtn']", function(e) {
+					e.preventDefault();
+					if ($("span[id^='advFilterBtn']").html() == 'Off') {
+						$("div[id^='advFilterBox']").show();
+						$("span[id^='advFilterBtn']").html("On");
+					} else {
+						$("div[id^='advFilterBox']").hide();
+						$("span[id^='advFilterBtn']").html("Off");
+					}
+				});
+
+				showEditor();
+
+				$(document).bind("mousemove",function(e){
+					e.preventDefault();
+					if (window.opener && window.opener.resetMouseMoveCounter) {
+						window.opener.resetMouseMoveCounter();
+					}
+				});
+					
+			});
+
+			function getCurrentDate(){
+				return '03042019';
+			}
+
+			function getContextPath(){
+				return "/ddfs";
+			}
+			
+			function showCkEditorContent(editor){
+				var editor_id = editor.container.getAttribute("id");
+				editorId = editor_id.replace("cke_","");
+				var $translitration = $("#translitration").dialog({
+					autoOpen: false,
+					resizable: true,
+					height:400,
+					width:650,
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 1
+					}
+				});
+				$('#languageFrame').attr("src", getContextPath()+"/lang.jsp");
+				$("#translitration").dialog('open');
+			}
+			function abc(data){
+				 CKEDITOR.instances[editorId].insertHtml(data);
+				 $("#translitration").dialog('close');
+			}
+			function cancelAdd(){
+				$("#translitration").dialog('close');
+			}
+		</script>
+		
+		
+		<script type="text/javascript" src="/ddfs/scripts/jixedbar-0.0.5/jquery.jixedbar.js"></script>
+		<style type="text/css">
+		#cnvsLablTxtArea{
+			resize : none;
+			background : transparent;
+		}
+		#canvas{
+
+			cursor : url("/ddfs/images/highlightMarkerTool.png"), progress;
+		}
+		#canvasToolBox{
+			position: fixed;
+			width: 16%;
+			margin-left: 524px;
+		}
+		#canvasToolBox img {
+			border: 1px solid;
+			border-radius: 4px;
+			margin-left: 7px;
+			padding: 4px;
+			}
+		.no-close .ui-dialog-titlebar-close {display: none }
+		html {height: auto!important;}
+		#layout{background-color:#fff;}
+			body{ background-color: #E5E5E5 !important;min-width: auto !important; width: 100%;}
+
+		</style>
+		<script type="text/javascript">
+		    $(document).ready(function() {
+				$("#actionbar").jixedbar({
+					    transparent: false,
+					    opacity: 0.9,
+					    slideSpeed: "fast",
+					    roundedCorners: false,
+					    roundedButtons: false,
+					    menuFadeSpeed: "fast",
+					    tooltipFadeSpeed: "slow",
+					    tooltipFadeOpacity: 1.0
+				});
+
+				$(window).bind("mousemove",function(){
+					//window.opener.mouseMove = 0;
+				});
+				$(window).unload(function() {
+					//unlockAndCloseFile('5fef2c78-e97a-4d79-a9a2-2d2678a4c647');
+				});
+		    });
+
+		 
+		    function showPdfImage(url,annotaionId){
+				var path=annotaionId.split("|");
+				var pageNo=path[3];
+				var fileNo= path[2];
+				var areaId=path[1];
+				path=path[0];
+				var html='<div id="viewPdfImageDialog" title="Annotation" style="display:none">'+
+							'<div class="page" style="position: relative; float: left; width: 57%;"><img alt="" id="imgId" style="width:100%;height:auto;" src="'+url+'" /></div>'+
+							'<div id="commentsId" class="annot-div-comm"></div>'+
+						'</div>';
+				var url1 = /ddfs/+"annotation/getAnnotation.do?action=getAnnotationComments&note=1&annotationPath="+annotaionId;
+				$.ajax({
+					url : url1,
+					 success: function(response){
+						$("#commentsId").html(response);
+					}
+
+				});
+
+				var $addRefDialog = $(html).dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:530,
+					width:850,
+					modal: true,
+					zIndex: 1000,
+					close:function(){
+						try {
+							 $(this).dialog('destroy').remove();
+						} catch (e) {
+							// TODO: handle exception
+						}
+					},
+					open: function( event, ui ) {
+						setTimeout(function(){annotateImage(path,pageNo,areaId,fileNo);},1000);
+					}
+
+
+				});
+				$addRefDialog.dialog('option', 'buttons',
+						{
+							 'Cancel': function() {
+								 try {
+									 $(this).dialog('destroy').remove();
+								} catch (e) {
+									// TODO: handle exception
+								}
+
+								return false;
+							 }
+						});
+				$addRefDialog.dialog('open');
+
+				$("#image-annotate-add").hide();
+				return false;
+			}
+		    function annotateImage(path,pageNo,areaId,fileNo){
+				var annotatedImage =$("#imgId").annotateImage({
+					getUrl:'/ddfs/annotation/viewAnnotation.do?action=getAnnotations&path=' + path + '&pageNo=' + pageNo+'&area='+areaId+'&fileNo='+fileNo,
+					editable: true,
+					highlightOn: true,
+					imageHeight:$("#imgId").height(),
+					imageWidth:$("#imgId").width(),
+				});
+		    }
+
+
+
+
+
+		    /* $(document).ready(function() {
+		   	 draftFrameResize();
+		   	 noteFrameResize();
+		   	 $(window).resize(function() {
+		   		 draftFrameResize();
+		   		 noteFrameResize();
+		   	 });
+		   });
+		   function  draftFrameResize() {
+		       $height = $(window).height() -140;
+		       $('.draft-odt-frame').height($height);
+		   }
+
+		   function  noteFrameResize() {
+		   	alert(height);
+		       $height = $(window).height() -102;
+		       $('#notesFrame').height($height);
+		   } */
+
+
+		  /*  $(document).ready(function() {
+				switchViewTabsArea();
+				resizeFileViewIframe();
+			  $(window).resize(function() {
+				  switchViewTabsArea();
+				  resizeFileViewIframe();
+				});
+
+			});
+
+			 function resizeFileViewIframe() {
+				 alert(height);
+			    $height = $(window).height() -102;
+			    $('#notesFrame').height($height);
+			}
+			   function switchViewTabsArea() {
+			    $height = $(window).height() -140;
+			    $('#currentsIFrame').height($height);
+			}  */
+
+
+		</script>
+
+		<!--
+		<script type="text/javascript" src="/ddfs/scripts/ADxMenu.js"></script>
+		-->
+
+	</head>
+
+	<body style="height: auto;">
+
+		
+		
+		
+			
+		
+
+
+ 		<div id="layout"  >
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+	
+	 $(document).ready(function(){
+		  $('#linkedPopover').click(function (e) {
+			  e.stopPropagation();
+			 	$('.linked-popover').toggle();
+			});
+		
+		  $(".lockSelect").mouseleave(function(e){
+				 $(".lockSelect").hide();  
+		  
+	 	 });
+		});
+	 $(document).click(function(e){
+			var targetbox = $('.merged-popover');
+			if(!targetbox.is(e.target) && targetbox.has(e.target).length === 0){
+			    $('.merged-popover').hide();
+			}
+		});
+	 $(document).click(function(e){
+			var targetbox = $('.linked-popover');
+			if(!targetbox.is(e.target) && targetbox.has(e.target).length === 0){
+			    $('.linked-popover').hide();
+			}
+		});
+	
+	
+		var notesFrameSrc;
+		$(document).ready(function( $ ){
+			notesFrameSrc=$("#notesFrame").attr("src");
+			
+			$("a.jump").off("click").on("click",function(){
+				if($("#notesFrame").length==1){
+					$("#notesFrame").contents().find("#togglerNoteEditorBox").css("display", "block");
+					$("#notesFrame").contents().find("#togglerNoteEditor").html('Hide Note Editor');
+				 	$("#notesFrame").attr("src",notesFrameSrc+"#togglerNoteEditorBox");
+			 	}else{
+			 		$("#togglerNoteEditorBox").css("display", "block");
+		    		$("#togglerNoteEditor").html('Hide Note Editor');
+				 	window.location.href="#togglerNoteEditorBox";
+				}
+			});
+			$('#tags').tagsInput({
+				   'height':'100px',
+				   'width':'97%',
+				   'interactive':true,
+				   'defaultText':'add a tag',
+				   'removeWithBackspace' : true,
+				   'minChars' : 0,
+				   'maxChars' : 0, //if not provided there is no limit,
+				   'placeholderColor' : '#666666',
+				   'onAddTag' : function(tag) {
+					   $.post('/ddfs/files/updateTag.do',
+							   [{ name: 'fileNo', value: '5fef2c78-e97a-4d79-a9a2-2d2678a4c647'} ,{ name: 'tags', value: $('#tags').val()}],
+							   function(data) {});},
+				   'onRemoveTag' : function(tag) {
+					   $.post('/ddfs/files/updateTag.do',
+							   [{ name: 'fileNo', value: '5fef2c78-e97a-4d79-a9a2-2d2678a4c647'} ,{ name: 'tags', value: $('#tags').val()}],
+							   function(data) {});
+				   }
+			});
+		});
+		
+		
+		 $(document).click(function(e){
+			var targetbox = $('.icon-link');
+			if(!targetbox.is(e.target) && targetbox.has(e.target).length === 0){
+			    $('.lockSelect').hide();
+			}
+			}); 
+
+
+		function fileUnlock() {
+			$(".lockSelect").toggle();
+		}
+		function lockFile(fileNo,ob){
+			$.post("lockFile.do",{action:"lockFile","fileNo":fileNo,tempOperation:false,excludeBookmark:false,fromQueue:'null'},function(data){
+				location.reload();
+				/*After lock  workQueue table refresh*/
+				if (window.opener && window.opener.refreshData) {
+					if(!window.opener.closed) {
+						window.opener.refreshData();
+					 }
+				}
+			});
+		}
+		function unlockFile(fileNo,ob){
+			$.post("lockFile.do",{action:"unlockFile","fileNo":fileNo,tempOperation:false,excludeBookmark:false,fromQueue:'null'},function(data){
+				if (data != "" && data != "0") {
+					
+						openConfirmationDialog(fileNo,data);
+					
+					
+				} else {
+					location.replace(location.href.replace("&autolock=true",""));
+					//location.reload();
+				}
+				
+				/*After  unlock workQueue table refresh*/
+				if (window.opener && window.opener.refreshData) {
+					if(!window.opener.closed) {
+						window.opener.refreshData();
+					 }
+				}
+			});
+		}
+		
+		function unlockAndCloseFile(fileNo){
+			if ("true" == 'null'){
+			 $.post("lockFile.do",{action:"unlockFile","fileNo":fileNo,tempOperation:false,excludeBookmark:false,fromQueue:'null'},function(data){
+				 if (window.opener && window.opener.refreshData) {
+					if(!window.opener.closed) {
+						window.opener.refreshData();
+					 }
+					 setTimeout(function(){
+						window.close();
+						window.opener.focus();
+					 }, 100)
+				 }
+			 });
+			} else {
+				window.close();
+				window.opener.focus();
+			}
+		 }
+		
+	function openConfirmationDialog (fileNo,msg) {
+		var $msgCommonDialog = $('<div id="ConfirmationDialog"><span class="popup-info">'+msg+'</span></div>').dialog({
+			autoOpen: false,
+			bgiframe: true,
+			resizable: false,
+			height : 'auto',
+			width:600,
+			modal: true,
+			title: 'Alert',
+			overlay: {
+				backgroundColor: '#000',
+				opacity: 0.1
+			},
+			closeOnEscape: false,
+			close: function(){
+				$msgCommonDialog.dialog("destroy").remove();
+			}
+		});
+
+		$msgCommonDialog.dialog('option', 'buttons',
+				{
+					 'Ok': function() {
+						 $.post("lockFile.do",{action:"unlockAttachmentsInFile","attachmentAction":"Unlock","fileNo":fileNo,tempOperation:false,excludeBookmark:false},function(data){
+							 location.reload();
+						 });
+						$(this).dialog('close');
+						
+					 },
+	         	   'Cancel' : function() {
+	         		  $(this).dialog('close');
+	         		  location.reload();
+	         	   }
+				});
+		$msgCommonDialog.dialog('open');
+		return false;
+	}
+
+		$(document).ready(function() {
+			fileViewNavbarResize();
+			resizeFileMenu();
+			resizeAddAttachement();
+			$(window).resize(function() {
+			 fileViewNavbarResize();
+			 resizeFileMenu();
+			 resizeAddAttachement();
+		});
+			 $("#docViewId").click(function(){
+			 $(".mega-dropdown-menu").toggle();	
+			 });
+			 $(".missDocDiv").mouseleave(function(e){
+			 $(".missDocDiv").hide();  
+	 	 });
+	});
+		 $(document).click(function(e){
+				var targetbox = $('#docViewId');
+				if(!targetbox.is(e.target) && targetbox.has(e.target).length === 0){
+				    $('.missDocDiv').hide();
+				}
+			});
+	/*submenu-start*/
+	function fileMenuNav(){
+			$(".fileView-navbar-collapse").addClass("fileViewSubMenu");
+			$(".fileView-navbar-collapse").find("#navi").removeClass("fileViewMenu");
+			$('.fileView-navbar-collapse').slideToggle(300, function() {
+		    $('.fileView-navbar-collapse').toggleClass('fileViewSubMenu', $(this).is(':visible'));
+
+	  });
+	}
+
+	 function fileViewNavbarResize() {
+
+		 if($(window).width() >= 1025){
+			 $(".fileView-navbar-collapse").removeClass("fileViewSubMenu");
+			 $("#navi").addClass("fileViewMenu");
+			 $("#actionbar").removeClass("fileViewActionbar");
+			 $(".navbar-header").css("width", 'auto');
+			 $(".fileView-navbar-collapse").css("height", 'auto');
+			 $(".fileView-navbar-collapse").css("display", 'block');
+			}
+			else {
+			$(".fileView-navbar-collapse").css("display", 'none');
+			$("#actionbar").addClass("fileViewActionbar");
+			$(".fileView-navbar-collapse").addClass("fileViewSubMenu");
+			$("#navi").removeClass("fileViewMenu");
+			$(".fileView-navbar-collapse").addClass("fileViewSubMenu");
+			 $(".navbar-header").css("width", '100%');
+			}
+		}
+
+
+	 function  resizeFileMenu() {
+		    $height = $(window).height() -142;
+		    $('.fileViewSubMenu').height($height);
+		}
+
+	 function  resizeAddAttachement() {
+		    $height = $(window).height() -142;
+		    $('.doc-attach-div').height($height);
+		}
+	 $('.dropdown-menu').click(function(e) {
+		    e.stopPropagation();
+		});
+	 function getMissingDocuments(fileNo){
+		 $.ajax({
+	 			 type:"GET",
+				url : "getMissingDocuments.do?fileNo="+fileNo,
+				 success: function(response){
+					 $("#missingDocDivId").html(response);
+				}
+
+			});
+	 }
+	 function openActionItemsPopUp(fileNo){
+			$actionItemsDialog = $("<div id='actionItemsDialog'></div>").dialog({
+				autoOpen: false,
+				bgiframe: true,
+				resizable: false,
+				height:600,
+				width:1200,
+				modal: true,
+				title: "Action Items",
+				overlay: {
+					backgroundColor: '#000',
+					opacity: 0
+				},
+				close: function (){
+					 $actionItemsDialog.dialog("destroy").remove();
+				}
+			});
+			$actionItemsDialog.dialog('option', 'buttons',
+			{
+			 'Close': function() {
+				 $actionItemsDialog.dialog("destroy").remove();
+			 	},
+
+			});
+
+			$actionItemsDialog.dialog('open');
+			$("#actionItemsDialog").load('/ddfs/files/addFileDueDate.do?_decoration=true&action=viewActionItems&fileNo='+fileNo);
+			return false;
+	 }
+	 function closeEditor(){
+			$("#onlyofficeFrame").attr("src","");
+			$("#onlyofficeFrame").hide();
+			$("#actionbar").show();
+			$(".editCloseBtn").hide();
+			window.location.reload(true);
+			 
+	 }
+	 $(document).mouseup(function (e)
+			 {
+			     var container = $(".missDocDiv");
+			     if (!container.is(e.target) // if the target of the click isn't the container...
+			         && container.has(e.target).length === 0) // ... nor a descendant of the container
+			     {
+			         container.hide();
+			     }
+			 });
+	</script>
+<style>
+.main-heading {padding: 0 5px!important;}
+.tab-contents-general  { margin-top: 67px;}
+#notesViewFrame   { margin-top: 67px;}
+#switchViewTabs  { margin-top: 67px;}
+.fg-toolbar { border: medium none !important;  font-size: 1em;}
+.action-link {margin: 0px!important;}
+#chitDialog > a#closeBtn {
+    background-color: #00aaa0;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    padding: 1px 6px;
+    position: absolute;
+    right: 2px;
+    text-align: center;
+    top: 2px;
+    vertical-align: middle;
+    z-index: 1000;}
+#chitDialog > a#closeBtn:hover {cursor: pointer;background-color: #F3A434!important;}
+
+.lockSelect:after, .lockSelect:before {
+	bottom: 100%;
+	left: 48px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.lockSelect:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #F8F8F8;
+	border-width: 9px;
+	margin-left: -36px;
+}
+.lockSelect:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #A9ADAE;
+	border-width: 10px;
+	margin-left: -37px;
+}
+.lockSelect {background-color: #ffffff;
+    border: 1px solid #a9adae;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+   	 float: left;
+    height: auto;
+    margin:40px -8.2% 0;
+    min-height: 30px;
+    padding: 10px;
+    position: absolute;
+    width: 300px;
+    z-index: 100;;}
+.unlockBtn {    color: #fff;
+    font-size: 12px;
+    margin: 10px 37% 0;}
+.unlockBtn label {pointer-events: none;}
+.missDocDiv {    width: 600px;
+    left: 0;
+    top: 40px;
+    padding: 0;
+    box-shadow: 2px 8px 20px 1px #46494A;
+    border-radius: 0px;}
+.missDocDiv:before {left: 10px!important;} 
+.missDocDiv:after{left: 10px!important;}    
+.missingDocScroll {height: 300px;
+    float: left;
+    overflow-y: scroll;
+    width: 100%;}
+.missingDocScroll table td:nth-child(1) i.fa {font-size: 16px; color: #333;     font-size: 16px;
+    color: #615555;
+    margin-left: 10px;}
+        
+.missingDocScroll td {
+	padding: 5px;
+    font-size: 13px;
+    color: #555;
+}     
+
+.mega-dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    top: -8px;
+    left:44.5%;
+    z-index: 10;
+}
+.mega-dropdown-menu:after {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    top: -8px;
+    left: 44.5%;
+    z-index: 8;
+}
+.editCloseBtn { 
+ 	font-size: 11px;
+    padding: 0 5px;
+    position: absolute;
+    right: 121px;
+    top: 0px;
+    z-index: 1000;
+}
+</style>
+
+	
+	
+	
+		
+		
+	
+
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+        <div id="fileMenuBarContainer" >
+        <div class="page-loader file-view-load">
+			<div id="ajaxLoader" style="">
+				<img  src="../images/loader-bar.gif" width="900" height="5" style=" z-index: 10000;">
+			</div>
+		</div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle fileNavbarToggle"  onclick="fileMenuNav()">
+                   <i class="fa fa-navicon"></i>
+                </button>
+               <span class="guideline">
+				
+				
+					
+					
+					
+					
+						
+						
+							&nbsp;File 48/2019/OSPYN
+						
+					
+
+					
+				
+			</span>
+			<ul class="fileIconActions ">
+			     <li>
+					<a href="javascript:void(0);" style="cursor: pointer;" onclick="viewDetails('5fef2c78-e97a-4d79-a9a2-2d2678a4c647','File','/ddfs','48/2019/OSPYN')" title="Time Line" class="`">
+						<i title="Timeline" class="fa fa-clock-o " ></i>
+					</a>
+				</li>
+					
+				
+				 <li>
+					<a href="javascript:void(0);" onclick="showFileRemark('5fef2c78-e97a-4d79-a9a2-2d2678a4c647')" title="File Remarks" class="`">
+						
+							<i class="fa fa-comments-o" style="font-size:18px;"></i>
+						
+					</a>
+				</li>
+				
+				
+					<li>
+						<a href="javascript:void(0);" onclick="showFileTags()" title="File Tags" class="icon-link">
+							
+								<i class="fa fa-tags"  style="font-size:18px;"></i>
+							
+						</a>
+					</li>
+					
+					
+					
+							<li>
+								
+								
+									<a href="javascript:void(0);" title="Mark As Confidential" onclick="markAsConfidential('5fef2c78-e97a-4d79-a9a2-2d2678a4c647', 'false','false')" class="icon-link" >
+										<i class="fa fa-eye-slash" title="Mark As Confidential" style="/*color:#5DC279 !important;*/font-size:19px;"></i>
+									</a>
+								
+							</li>
+							
+					
+					
+				
+				
+				
+				
+				
+				
+				 
+					
+				
+				<li class="dropdown mega-dropdown" onclick="openActionItemsPopUp('5fef2c78-e97a-4d79-a9a2-2d2678a4c647')"  title="Action Items">
+					        <a href="javascript:void(0);" id="actionItemId" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"> </i> </a>
+			
+				</li>
+				
+				<label class="file-tag-subject" id="FileTopic2" style="display: none;">Subject : CUSAT / dfbdfbd</label>
+				
+			</ul>
+            </div>
+            <a id="closeLnk"  href="#" class="file-view-close" title="Close" onclick="unlockAndCloseFile('5fef2c78-e97a-4d79-a9a2-2d2678a4c647')">
+						<i class="fa fa-close"></i>
+					</a>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="fileView-navbar-collapse" >
+                    <ul class=" fileViewMenu nav navbar-nav" id="navi">
+				
+				
+					
+						
+							<li>
+								
+								
+									
+								
+								<a id="fileInfoMenu" class="active-menu"
+									href="/ddfs/files/viewInformation.do?fileMenuResourceId=fileInfoMenu&_decoration=true&refreshParent=false&fileAction=viewInfo&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+									Information
+								</a>
+						
+					
+					
+				
+					
+						
+							<li>
+								
+								
+								<a id="fileAttachmentsMenu" class=""
+									href="/ddfs/files/fileAttachments.do?fileMenuResourceId=fileAttachmentsMenu&_decoration=true&fileAction=fileAttachments&refreshParent=false&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+									Attachments
+								</a>
+						
+					
+					
+				
+					
+						
+							<li>
+								
+								
+								<a id="fileNotesMenu" class=""
+									href="/ddfs/files/notesContainer.do?fileMenuResourceId=fileNotesMenu&_decoration=true&refreshParent=false&fileAction=legacyNoteView&zoomFileView=false&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+									Notes
+								</a>
+						
+					
+					
+				
+					
+						
+							<li>
+								
+								
+								<a id="fileDraftsMenu" class=""
+									href="/ddfs/files/viewDrafts.do?fileMenuResourceId=fileDraftsMenu&_decoration=true&fileAction=viewDrafts&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+									Drafts
+								</a>
+						
+					
+					
+				
+					
+						
+							<li>
+								
+								
+								<a id="fileDocumentsMenu" class=""
+									href="/ddfs/files/viewDocuments.do?fileMenuResourceId=fileDocumentsMenu&_decoration=true&fileAction=viewDocs&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+									Documents
+								</a>
+						
+					
+					
+				
+					
+					
+						
+					
+				
+					
+					
+						
+					
+				
+					
+					
+						
+					
+				
+					
+						
+							<li>
+								
+								
+								<a id="fileReferencesMenu" class=""
+									href="/ddfs/files/viewRepoFileReferences.do?fileMenuResourceId=fileReferencesMenu&_decoration=true&fileAction=viewRepoFileReferences&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+									References
+								</a>
+						
+					
+					
+				
+					
+					
+						
+					
+				
+				
+				
+					<li>
+						<div class="submenu-last">
+							<a id="fileMoreLink" href="#" class="file-more-down">
+								<i class="fa fa-angle-double-down"></i>
+							</a>
+							<div class="file-more-link">
+								<ul>
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											<li>
+												
+												
+												<a id="fileDespatchMenu" class=""
+													href="/ddfs/files/viewDespatches.do?fileMenuResourceId=fileDespatchMenu&_decoration=true&fileAction=viewDespatch&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+													Despatch
+												</a>
+											</li>
+										
+									
+										
+											<li>
+												
+												
+												<a id="fileActionItemMenu" class=""
+													href="/ddfs/files/fileActionItemList.do?fileMenuResourceId=fileActionItemMenu&_decoration=true&fileAction=viewActionItems&refreshParent=false&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+													Action Items
+												</a>
+											</li>
+										
+									
+										
+											<li>
+												
+												
+												<a id="fileInwardsMenu" class=""
+													href="/ddfs/files/viewTapals.do?fileMenuResourceId=fileInwardsMenu&_decoration=true&fileAction=viewTapals&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+													Inwards
+												</a>
+											</li>
+										
+									
+										
+									
+										
+											<li>
+												
+												
+												<a id="fileHistoryMenu" class=""
+													href="/ddfs/files/viewHistory.do?fileMenuResourceId=fileHistoryMenu&_decoration=true&fileAction=viewHistory&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&fromQueue=null">
+													History
+												</a>
+											</li>
+										
+									
+							</ul>
+							</div>
+						</div>
+					</li>
+				
+				
+                </ul>
+            </div>
+
+            <!-- /.navbar-collapse -->
+        </div>
+
+        <div class="submenu-bottom">
+          <a class="editCloseBtn btn btn-danger btn-xs" style="display: none;" onclick="closeEditor()">Close Editor</a>
+         <iframe id="onlyofficeFrame" style="display:none;position:fixed;left:0;width:100%;height:100%;border:0;top:0;"></iframe>
+			<label class="file-tag-subject" id="FileTopic1" style="display: block;">Subject : CUSAT / dfbdfbd</label>
+			<div class="file-view-sub-menu">
+			<ul>
+				
+						
+								
+					
+								
+						
+					
+				
+				 	
+				
+			</ul>
+			</div>
+		</div>
+
+
+        <!-- /.container -->
+    </nav>
+
+	<div id="fileTagDialogDiv" style="display: none;">
+		<div id="site-top-bar-tags-frame" style="margin:0px;">
+			<div id="site-top-bar-tags-content">
+				<label style="float: left; margin-bottom: 5px;">Tag the File with keywords. These tags will be utilized while searching.</label>
+				<input type="text"  name="tags" id="tags" value="" />
+			</div>
+		</div>
+	</div>
+	<script>
+
+		$(document).ready(function(){
+			$(".submenu-last").bind('click', function(){
+				$(".file-more-links").slideToggle(200);
+			});
+		});
+
+	</script>
+			<div id="componentview" >
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+<script>
+	
+	$(document).ready(function() {
+		$('span.mandatory').each(function(){
+    		$(this).hide();
+        });
+		
+		initializeOnClickCalendarWithLimit('03.04.2019','04.04.2019');
+
+		var forwarded = '';
+		if (forwarded != 'true') {
+			//invokeAndDrawAttachments("attachments.do?action=list&tempOperation=false&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&sid=bbb2580d-5f00-4960-8d45-74e4db6c09d4");
+		}
+		$("#filTransferForm").relatedSelects({
+			defaultOptionText:'-- Select --',		
+			onChangeLoad: '/ddfs/getSeatsForSection.do?departmentId=1',
+			selects: ['newOwnerSectionId', 'transferSeat'],
+			onLoadingEnd : function () {
+				  $("#transferSeat").trigger("chosen:updated");
+			}
+		});
+		//setupLabel();
+		function setupLabel(obj) {
+				if(obj.val() == 'filetransfer-without-sequence') {
+                	$('#withoutSeqDropDown').show();
+                	$('#withSeqDropDown').hide();
+                	$('span.mandatory').each(function(){
+                		$(this).hide();
+	                });
+                } else if (obj.val() == 'filetransfer-with-sequence') {
+                	$('#withoutSeqDropDown').hide();
+                	$('#withSeqDropDown').show();
+                	$('span.mandatory').each(function(){
+                		$(this).hide();
+	                });
+                }
+	    };
+        $('.fileTransferRadio').click(function(){
+            setupLabel($(this));
+        });
+        $('form[name="filTransferForm"]').relatedSelects({
+    		onChangeLoad: '../getSectionsAndAsstsForDept.do',
+    		selects: ['departmentId','sectionId','seatId'],
+              onLoadingEnd : function () {
+				$("#transferSeatDiv select[name='seatId']").removeAttr("disabled");
+			}
+             	});
+		
+        loadCategoryAttributes('5fef2c78-e97a-4d79-a9a2-2d2678a4c647', '0', '/ddfs');
+        
+        $("#transferSeat").chosen({
+			disable_search_threshold: 1,
+		    no_results_text: "Oops, nothing found!",
+		    width: "99%"
+		  });
+       
+	});
+
+	 function submitTransferForm(fileNo) {
+		 	  var validForm = validateForm();
+		 	  if (!validForm) {
+		 		//  $("#transfer-button").show();
+		 		  return false;
+		 	  } else {
+		 		// $("#transfer-button").hide();
+		 	  }
+		 	  var filetransferType = $('.fileTransferRadio:checked').val();
+			  var $filTransferForm = $("form[name='filTransferForm']");	
+		   	  $.ajax({
+				  type : "POST",			    
+				  url: "../files/transferFile.do?_decoration=false&filetransferType="+filetransferType+"&fileNo="+fileNo, 
+				  dataType: 'html',
+				  success:  function(response){
+						if (response == ''){	
+							displayTansferFileMessageDialog("File Ownership transferred.");
+							/*After Transefer parent table and current page refresh*/
+							if (window.opener && window.opener.refreshData) {
+								if(!window.opener.closed) {
+									window.opener.refreshData();
+								 }
+							}
+
+						} else{
+// 							$("#transfer-button").show();
+							displayCommonMessageDialog("An Error Occured In Transferring File Ownership Transfer");
+						}
+					},error:function(xhr){
+						document.getElementById("saveBtn").disabled = false;
+						displayCommonMessageDialog("An Error Occured In Transferring File Ownership Transfer");
+					},
+
+				 data : $filTransferForm.serialize() 
+			  });
+
+     }
+
+     function validateForm() {
+
+         //var valid = true;
+         //var invalidObjArr = new Array();
+		 //$('div.form-section').children('span.mandatory').hide();
+		 //var dept=$('#departmentId').val();
+
+         var transferSeat = $('#transferSeat').val();
+     	 var newOwnerSectionId = $('#newOwnerSectionId').val();
+     	 var validationMesgs = "<div><ul>";
+     	 var flag = true;
+                  
+         if ($("#radio-without-sequence").is(':checked')) {
+        	 if (newOwnerSectionId ==null || newOwnerSectionId == '') {
+        		 validationMesgs+="<li><label>Please select Section.</label></li>";
+ 				 flag = false;
+        	 }
+        	 if (transferSeat == '' || transferSeat == 'All') {
+        		 validationMesgs+="<li><label>Please select Seat.</label></li>";
+ 				 flag = false;        	
+ 				}
+        	 if(!flag){
+     			displayCommonMessageDialog(validationMesgs);
+     		}
+        	 
+         } else {
+        	 if ($("#filTransferForm #departmentId").val() == '') {
+        		 validationMesgs+="<li><label>Please select Department.</label></li>";
+ 				 flag = false;
+        	 }
+        	 if ($("#filTransferForm #sectionId").val() == '' || $("#filTransferForm #sectionId").val() == 'All') {
+        		 validationMesgs+="<li><label>Please select Section.</label></li>";
+ 				 flag = false;
+        	 }
+        	 if ($("#filTransferForm #seatId").val() == '') {
+        		 validationMesgs+="<li><label>Please select Seat.</label></li>";
+ 				 flag = false;
+        	 }
+        	 if(!flag){
+      			displayCommonMessageDialog(validationMesgs);
+      		}
+         }
+         /* if (!valid && null != invalidObjArr) {
+        	 for(var i=0; i<invalidObjArr.length; i++) {
+        		 $(invalidObjArr[i]).closest('div.form-section').children('span.mandatory').show();        		 
+        	 }
+         } */
+		 return flag;
+     }
+     function openChangeFileCategoryDialog() {
+    	 var fileWorkFlowId = $("#fileWorkFlowId").val();
+    	 if(fileWorkFlowId == '0' || fileWorkFlowId == ''){
+    		 var $changeFileCategoryDialog = $("#changeFileCategoryDialog").dialog({
+    	 			autoOpen: true,
+    	 			bgiframe: true,
+    	 			resizable: false,
+    	 			height:500,
+    	 			width:650,
+    	 			modal: true,
+    	 			zIndex: 1000,
+    	 			//position: { my: "top", at: "top", of :".information-container"},
+    	 			title: 'Change File Category',
+    	 			overlay: {
+    	 				backgroundColor: '#000',
+    	 				opacity: 0.5
+    	 			}
+    	 			 ,
+    				buttons:{
+    					'Set File Category': function() {
+    							var fileCategory = $("#selectfileDialogCategoryId").val();
+    							if(''!= fileCategory){
+    								checkDefaultWorkFlow(fileCategory)
+    							}else{
+    								saveCategoryAndLoadAttributes('5fef2c78-e97a-4d79-a9a2-2d2678a4c647', fileCategory, '/ddfs','');
+    							}
+    						}, 
+    		 				'Cancel': function() {
+    		 					$(this).dialog('close');
+    						}
+    				} 
+    	 		});
+    	 }else{
+    		 displayCommonAlertDialog("Please cancel the workflow and then try again."); 
+    	 }
+ 		
+ 		
+ 	/* 	$changeFileCategoryDialog.dialog('option', 'buttons', 
+ 				{ 	
+ 					'Set File Type': function() {
+ 						var fileCategory = $("#selectfileDialogCategoryId").val();
+ 						saveCategoryAndLoadAttributes('5fef2c78-e97a-4d79-a9a2-2d2678a4c647', fileCategory, '/ddfs');
+ 					}, 
+ 	 				'Cancel': function() {
+ 	 					$($changeFileCategoryDialog).dialog('close');
+ 					}
+ 					 
+ 				}); */
+ 		
+ 		//$changeFileCategoryDialog.dialog('open');
+ 		
+ 		return false;
+ 	}
+
+     function selectedSubjects(subjectId,subjectDesc,parentSubjectId,parentSubjectDesc){
+    		
+    		//if main subject selected (no parent)
+    		if(parentSubjectDesc == 'null') {
+    			$("#mainSubject").val(subjectDesc);
+    			$("#subjectId").val(subjectId);
+    			$("#subSubject").val(null);
+    		} else { //if sub-subject selected
+    			$("#mainSubject").val(parentSubjectDesc);
+    			$("#subSubject").val(subjectDesc);
+    			$("#subjectId").val(subjectId);		
+    		}
+    	
+
+    	$("#taxonomyDiv").dialog('close');	
+    		}
+    
+     $(document).ready(function() {
+    	 	infoLeftArea();
+    	 	infoRightArea();
+		  	$(window).resize(function() {
+		  	infoLeftArea();
+		  	infoRightArea();
+		  });
+    });
+     
+     function infoLeftArea() {
+   	    $height = $(window).height() -170;
+   	    $('div#infoLeftSectioId').height($height);
+   	}
+     function infoRightArea() {
+    	    $height = $(window).height() -170;
+    	    $('div#infoRightSectioId').height($height);
+    	}
+     function checkDefaultWorkFlow(categoryId){
+    	 $.ajax({
+ 			url : "/ddfs/files/attributes.do?checkDefaultWorkFlow=true&categoryId=" + categoryId,
+ 			 type:"POST",
+ 			 success: function(response){
+ 				if('0' != response){
+ 					var $confirmationDialog = $("<div><label>The category is associated with a default work flow.</br> Do you want to activate this?</label></div> ").dialog({
+ 		 				autoOpen: false,
+ 		 				bgiframe: true,
+ 		 				resizable: false,
+ 		 				height:180,
+ 		 				width:350,
+ 		 				modal: true,
+ 		 				zIndex: 7000,
+ 		 				title: "Confirm Default WorkFlow",
+ 		 				buttons: {
+ 		 					Yes: function() {
+ 		 						saveCategoryAndLoadAttributes('5fef2c78-e97a-4d79-a9a2-2d2678a4c647', categoryId, '/ddfs',true);
+ 		 						$(this).dialog("close");
+ 		 						
+ 		 					},
+ 		 					No:function() {
+ 		 						saveCategoryAndLoadAttributes('5fef2c78-e97a-4d79-a9a2-2d2678a4c647', categoryId, '/ddfs','');
+ 		 						$(this).dialog("close");
+ 		 						
+ 		 					}
+ 		 						
+ 		 				}
+ 		 			});
+ 		 			$confirmationDialog.dialog("open");
+ 					
+ 				}else{
+ 					saveCategoryAndLoadAttributes('5fef2c78-e97a-4d79-a9a2-2d2678a4c647', categoryId, '/ddfs','');
+ 				}
+ 				
+ 			}
+
+ 		});
+     }
+     function displayTansferFileMessageDialog($var) {
+
+    		var $msgCommonDialog = $('<div id="msgCommonDialog"><span class="popup-info"><ul><li>' + $var + '</li></ul></span></div>').dialog({
+    			autoOpen: false,
+    			bgiframe: true,
+    			resizable: false,
+    			height : 'auto',
+    			width:400,
+    			modal: true,
+    			title: 'Alert',
+    			overlay: {
+    				backgroundColor: '#000',
+    				opacity: 0.1
+    			},
+    			closeOnEscape: false,
+    			close: function(){
+    				$msgCommonDialog.dialog("destroy").remove();
+    			}
+    		});
+
+    		$msgCommonDialog.dialog('option', 'buttons',
+    				{
+    					 'Ok': function() {
+    						$(this).dialog('close');
+    						$("#transferFileDialog").dialog('close');
+	 							window.location.reload();
+						  }
+    				});
+    		$msgCommonDialog.dialog('open');
+    		return false;
+    	}
+	</script>
+	<style>
+	#infoLeftSectioId {overflow-y:scroll; margin: 0px;}
+	#infoRightSectioId {overflow-y:scroll;margin: 0px;}
+		fieldset.radios { border: 0; padding-bottom: 9px; }
+		fieldset.radios label  { padding-left:30px;display: block; cursor: pointer; line-height: 20px; padding-bottom: 1px; text-shadow: 0 -1px 0 rgba(0,0,0,.2); }
+		.radios { padding-top: 5px;}
+		.label_radio input  { margin-right: 5px; }
+		.label_submit input { margin-left: 30%; }
+		.label_radio{ background: url(../images/radio-off.png) no-repeat;float: left; width: 40%;color: #006EB0; }
+		label.r_on{ background: url(../images/radio-on.png) no-repeat; }
+		.label_check input,.label_radio input  { position: absolute; left: -9999px; }
+		#filTransferForm.ui-dialog-titlebar {display : none;}
+		#filTransferForm.ui-widget-header { display: none; }
+		#fileSearchCont select {
+		width  : 50%;
+		}
+		body {background-color: #2A466B;}
+		.filter-div {padding: 25px 1%; width: 97.8%;}
+		.file-view-action-div {
+		border:none;
+	    float: left;
+	    margin: 0;
+	    padding: 6px 8px 0 0;
+	    width: 100%;
+	}
+	.chosen-container .chosen-drop {
+    border-bottom: 0;
+    border-top: 1px solid #aaa;
+    top: 100%!important;
+    bottom: auto!important;
+}
+</style>
+	
+	
+	
+	
+	<div id="scanDialog" title="Scan and Attach" style="display:none">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>File Upload</title>
+
+<script type="text/javascript">
+	function afterAttach(){
+		invokeAndDrawAttachments("attachments.do?action=list&tempOperation=false&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647");
+	}
+</script>
+
+</head>
+
+
+
+<body>
+<br clear="all" /><br clear="all" />
+<object
+    classid = "clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+    codebase = "http://java.sun.com/update/1.6.0/jinstall-6u14-windows-i586.cab#Version=6,0,0,8"
+    WIDTH = 500 HEIGHT = 600 >
+    <PARAM name="codebase" value="http://localhost:8080/ddfs/applets/">
+    <PARAM NAME = CODE VALUE = "com.ospyn.easyscan.SaneScanApplet" >
+    <PARAM NAME = ARCHIVE VALUE = "Seasyscan.jar" >
+    <param name = "type" value = "application/x-java-applet;version=1.6">
+    <param name = "scriptable" value = "false">
+    <PARAM NAME = "hosts" VALUE="">
+   	<PARAM NAME = "url" 
+		VALUE= "http://localhost:8080/ddfs/files/attachments.do?tempOperation=false&action=upload&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647">
+    <PARAM NAME = "dummyRun" VALUE="false">
+    <PARAM NAME="MAYSCRIPT" VALUE="true">
+    <PARAM NAME="afterAttachScript" VALUE="afterAttach">
+	<embed
+            type = "application/x-java-applet;version=1.6" \
+            codebase="http://localhost:8080/ddfs/applets/" \
+            CODE = "com.ospyn.easyscan.SaneScanApplet" \
+            ARCHIVE = "Seasyscan.jar" \
+            WIDTH = "500" \
+            HEIGHT = "450" \
+            hosts ="" \
+           	url = "http://localhost:8080/ddfs/files/attachments.do?tempOperation=false&action=upload&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647"
+            
+            dummyRun = "false" \
+            MAYSCRIPT = "true" \
+            scriptable = "false" \
+            afterAttachScript = "afterAttach" \
+            pluginspage = "http://java.sun.com/products/plugin/index.html#download">
+	    <noembed>
+            
+        </noembed>
+	</embed>
+    </comment>
+</object>
+</body>
+</html>
+
+	</div>
+	<div id="changeSubjectDialog" style="display:none">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+     	<div class="col-sm-12 form-group">
+            <label>Main Subject</label>
+            <select class="form-control" id="mainSubjectId" name="mainSubjectId"  onchange="javascript:partialSubmitParentDropDown(this, '../getSubSujects.do', 'mainSubject', 'subsubjectChangeContainer', '');">
+				<option value=""></option>
+				
+					<option value="Certificate Verification">
+					Certificate Verification
+					</option>
+				
+					<option value="CUSAT">
+					CUSAT
+					</option>
+				
+					<option value="New subject">
+					New subject
+					</option>
+				
+					<option value="Subject Example">
+					Subject Example
+					</option>
+				
+			</select>
+          </div>              
+      <div class="col-sm-12 form-group"  id="subsubjectChangeContainer">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<label>Sub Subject</label>
+<select id="subSubjectId" name="subSubjectId"  onchange="onchangeOfSubSubject(this)" class="form-control" >
+	<option value="">-- Select --</option>
+	
+</select>
+
+      </div>                            
+
+	</div>
+	<div id="changeFileCategoryDialog" style="display:none">
+		<div class="ddfs-search-two-column-container" style="margin: 5px 0 0;">
+	<form name="fileCatAttrDialogForm" id="fileCatAttrDialogForm" action="/ddfs/files/attributes.do?_decoration=false">
+		<div id="fileChangeCategorySelectContainer" style="margin-bottom:10px;">
+			<div class="form-column" style="margin-bottom: 15px;">
+				<label>File Category</label>
+				<select name="selectfileDialogCategoryId" id="selectfileDialogCategoryId" onchange="loadCategoryAttributesForChangeCatDialog('5fef2c78-e97a-4d79-a9a2-2d2678a4c647', $('#selectfileDialogCategoryId').val(), '/ddfs')">
+					<option value="0" style="width:100%;">Normal</option>
+					
+						
+						
+							<option value="418"  style="width:100%;">Degree Certificate Verification</option>
+						
+		        	
+						
+						
+							<option value="421"  style="width:100%;">gnggb</option>
+						
+		        	
+						
+						
+							<option value="424"  style="width:100%;">ABC</option>
+						
+		        	
+						
+						
+							<option value="425"  style="width:100%;">DBB</option>
+						
+		        	
+				</select>
+			</div> 
+		</div>
+		<div id="attributes-form-container-ccdialog" >
+			<input type="hidden" id="fileCategoryDialogFormFileNo" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+			<div id="attributes-container-ccdialog"></div>	
+		</div>
+	</form>
+</div>
+	</div>
+	
+	<div class="tab-contents-general" style="padding: 0 ">
+		
+		<div style="margin: 0px; width: 100%;">
+		 	<div>
+		 		
+			 		<div class="col-md-6 col-xs-12" style="padding: 0px;float: right;">
+			 	
+					<div class="pageFilterBox"  id="infoLeftSectioId" style="border-left: none; border-right:none; ">
+				 		<div class="inner-heading-div">
+							<label>
+								File Category : 
+								<span  id="selectFileCategoryName"></span>
+								
+										
+									<img alt="Edit" src="/ddfs/images/edit.png" 
+										style="cursor:pointer;margin-top:-4px;" onclick="openChangeFileCategoryDialog()" 
+										title="Change Category" />
+									
+								
+							</label> 
+						</div>
+						<div id="attributes-form-container" >
+							<form name="fileCatAttrForm" id="fileCatAttrForm" action="/ddfs/files/attributes.do?_decoration=false">
+								<input type="hidden" id="fileCategoryFormFileNo" name="fileNo"  />
+								<input type="hidden" id="fileCategoryFormCategoryId" name="categoryId" />
+								<input type="hidden" id="fileMainSubject" name="mainSubject" value="CUSAT" />
+								<input type="hidden" id="fileSubSubject" name="subSubject" value="" />
+								<input type="hidden" id="fileWorkFlowId" name="workflowId" value="0" />
+								<div id="attributes-container" class="ddfs-search-two-column-container"></div>	
+								
+									
+									
+									
+								
+							</form>
+						</div>
+					</div>
+					
+				</div>
+		 	
+		 	
+		 		<form id="file" name="fileInfoForm" action="/ddfs/files/viewInformation.do?_decoration=false&amp;fileAction=saveInfo" method="post">
+					<input id="seatId" name="seatId" type="hidden" value="bbb2580d-5f00-4960-8d45-74e4db6c09d4"/>
+					<input id="currentSeatName" name="currentSeatName" type="hidden" value="OSPYN - SEAT2"/>
+					<input id="tapalNo" name="tapalNo" type="hidden" value=""/>
+					<input id="createdDate" name="createdDate" type="hidden"  
+													value="28.03.2019"/>
+					<input id="departmentId" name="departmentId" type="hidden" value="1"/>
+					<input id="originalDeptId" name="originalDeptId" type="hidden" value="1"/>
+					<input id="originalSeatId" name="originalSeatId" type="hidden" value="bbb2580d-5f00-4960-8d45-74e4db6c09d4"/>
+					<input type="hidden" value="24471793-a1f9-4e4f-b7f4-d2028b43d238"/>
+					<input id="transferred" name="transferred" type="hidden" value="false"/>
+					<input id="status" name="status" type="hidden" value="NEW"/>
+					<input id="closed" name="closed" type="hidden" value="false"/>
+					<input id="linked" name="linked" type="hidden" value="false"/>
+					<input id="merged" name="merged" type="hidden" value="false"/>
+					<input id="forwardGroupId" name="forwardGroupId" type="hidden" value=""/>
+					<input id="categoryId" name="categoryId" type="hidden" value="0"/>
+					<input type="hidden" name="year" value="2019" />
+					<input type="hidden" name="refreshParent" value="true" />
+					<input id="seatReceivedDate" name="seatReceivedDate" type="hidden"  
+														value="28.03.2019 10.41.24"/>
+			 		
+			 		
+				 		<div class="col-md-6 col-xs-12"  style="padding: 0px;">
+				 	
+			 		
+				 		<div class="pageFilterBox" id="infoRightSectioId">
+					 		<div class="inner-heading-div">
+								<label>Basic Information</label> 
+							</div>
+							
+							 
+								
+							
+		            		<input type="hidden" name="instanceDisplayNo"  value="48/2019/OSPYN"/>
+							<input id="fileNo" name="fileNo" type="hidden" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647"/>
+						   		<div class="col-md-8 col-sm-6 col-xs-12  form-group">	
+						             <label class="mandatory pull-left w100">Owner</label>
+										<label class="form-control pull-left">SEAT2 [Antony George]</label>
+										
+									</div>
+						        <input id="owner" name="owner" type="hidden" value="bbb2580d-5f00-4960-8d45-74e4db6c09d4"/>
+						        <input id="ownerName" name="ownerName" type="hidden" value="SEAT2"/>
+						        <input id="ownerFirstName" name="ownerFirstName" type="hidden" value="Antony"/>
+						        <input id="ownerLastName" name="ownerLastName" type="hidden" value="George"/>
+						   		<div class="col-md-4 col-sm-6 col-xs-12  form-group">	
+						               	<label class="mandatory pull-left w100">Section</label>
+				            		<label class="form-control pull-left" style="min-height: 30px;">sec1</label>
+						   		</div>
+						   		<input id="originalSectionId" name="originalSectionId" type="hidden" value="24471793-a1f9-4e4f-b7f4-d2028b43d238"/>
+						   		<input id="sectionName" name="sectionName" type="hidden" value="sec1"/>
+						   		<div class="col-md-4 col-sm-6 col-xs-12  form-group">	
+					               	<label>Priority</label>
+				            		<select id="priorityId" name="priorityId" class="form-control">
+										<option value="1" selected="selected">Normal</option><option value="2">Immediate</option><option value="3">Urgent</option><option value="4">Meeting Urgent</option><option value="5">Assembly Urgent</option><option value="6">Action Today</option><option value="7">FAX</option><option value="8">REMINDER</option><option value="9">HEARING</option><option value="10">Court Case</option><option value="11">Most Urgent</option><option value="12">Reminder/Urgent</option>
+									</select>
+						   		</div>  
+								<div class="col-md-8 col-sm-6 col-xs-12  form-group">	
+					               	<label class="mandatory">
+			               			
+			   							Subject
+			   						
+			               			</label>
+				            		
+									<input id="mainSubject" name="mainSubject" class="form-control" readonly="readonly" type="text" value="CUSAT"/> 
+									<input type="hidden" id="subjectId" name="subjectId" value="2">
+																		
+									
+									
+					   			</div>
+					   			
+					   			<div class="col-md-6 col-sm-6 col-xs-12  form-group hidden">	
+					               	<label>Sub Subject</label>
+				            		<input id="subSubject" name="subSubject" class="form-control" readonly="readonly" type="text" value="" maxlength="100"/>
+					   			</div>
+					   			
+					   			<div class="col-md-6 col-sm-6 col-xs-12  form-group">	
+					               	<label class="mandatory">Subject Description </label>
+					            	<textarea id="subjectDescription" name="subjectDescription" class="form-control">dfbdfbd</textarea>  
+					   			</div>
+					   		
+					   		
+					   		
+							<div class="pageFilterBox" >
+						    	<div class="inner-heading-div" onclick="toggleSenderInfo()" style="cursor:pointer; margin: 0px;">
+									<label style="cursor:pointer; margin: 0px">Inward Originator Details</label> 
+									<div class="btn btn-success btn-xs pull-right" id="senderInfoContainerIcon" style="width: 30px; margin-top: -5px;	"><i class="fa fa-angle-double-down" ></i></div>
+								</div>
+								
+							 	<div id="senderInfoContainer" class="ddfs-search-four-column-container show-hide-div" style="display:none;">
+							 	
+									<div class="col-md-4 col-sm-6 col-xs-12  form-group">
+						               	<label>Sender</label>
+						            	<input id="senderName" name="senderName" class="form-control" type="text" value="sfsf"/>
+							   		</div> 
+									<div class="col-md-4 col-sm-6 col-xs-12  form-group">
+						               	<label>Address 1</label>
+						            	<input id="senderAddress1" name="senderAddress1" class="form-control" type="text" value=""/>
+							   		</div>
+							   		<div class="col-md-4 col-sm-6 col-xs-12  form-group">
+						               	<label>Address 2</label>
+					            		<input id="senderAddress2" name="senderAddress2" class="form-control" type="text" value=""/>
+							   		</div>
+							   		<div class="col-md-4 col-sm-6 col-xs-12  form-group">
+						               	<label>Address 3</label>
+						            	<input id="senderAddress3" name="senderAddress3" class="form-control" type="text" value=""/>
+							   		</div> 
+							   		<div class="col-md-4 col-sm-6 col-xs-12  form-group">
+						               	<label>Contact Number</label>
+					            		<input id="senderContact" name="senderContact" class="form-control" type="text" value=""/>
+							   		</div> 
+							   		<div class="col-md-4 col-sm-6 col-xs-12  form-group">
+						               	<label>Contact Email</label>
+						            	<input id="senderEmail" name="senderEmail" class="form-control" type="text" value=""/>
+							   		</div> 
+							   	</div>
+							</div>
+						
+						
+						<div class="pageFilterBox">
+					    	<div class="inner-heading-div" onclick="toggleOtherInfo()" style="cursor:pointer;margin:0px;">
+								<label style="cursor:pointer;margin: 0px">Other Details</label> 
+								<div class="btn btn-success btn-xs pull-right" id="otherInfoContainerIcon"  style="width: 30px;margin-top: -5px;"><i class="fa fa-angle-double-down" ></i></div>
+							</div>
+							
+						 	<div id="otherInfoContainer" class="ddfs-search-two-column-container show-hide-div" style="display:none;">
+						 	
+						   		<div class="col-md-4 col-sm-6 col-xs-12  form-group">	
+					               	<label>Language</label>
+				            		<select id="languageId" name="languageId" class="form-control">
+										<option value="1" selected="selected">English</option><option value="2">Malayalam</option><option value="3">Tamil</option><option value="4">Hindi</option>
+									</select>
+						   		</div>
+						   		
+					   				<div class="col-md-4 col-sm-6 col-xs-12  form-group">	
+					               		<label>Comments for public</label>
+					            		<textarea id="comments" name="comments"></textarea>
+						   			</div>
+						   		
+								
+								<div class="checkbox checkbox-primary  pull-left" >
+					         		<input id="electronicOnly1" name="electronicOnly" type="checkbox" value="true" checked="checked"/><label for="electronicOnly1">Is electronic only?</label><input type="hidden" name="_electronicOnly" value="on"/>
+						   		</div>
+						 	</div>
+						 </div>
+					
+						
+					</div> 
+					</div>
+					</div>
+						
+						<div class="file-view-action-div">		
+							<div class="float-left">
+								<input name="submit-button" class="btn btn-primary" onclick="saveInformation()" type="button" value="Save Information"/>
+								
+									<form id="fileActionExportFrm" action="/ddfs/files/file.do?_decoration=true&fileAction=viewExportables" method="POST">
+										<span id="exportFileContainer">
+											<input id="export-button" type="button" class="btn btn-warning"  value="Export File As PDF" onclick="viewExportables();" style="display:none"/>
+										</span>
+									</form>
+								
+								
+									
+										<input id="close-button" type="button" class="btn btn-danger" onclick="deleteFile('5fef2c78-e97a-4d79-a9a2-2d2678a4c647',this,'48/2019/OSPYN','/ddfs','Numbered',
+											'true');" value="Dispose File" />
+									
+								
+								
+								
+									
+										<input id="close-button" type="button" class="btn btn-primary" onclick="javascript:return transferFile('5fef2c78-e97a-4d79-a9a2-2d2678a4c647')" value="Transfer Ownership" />
+									
+								
+								
+							</div>
+						</div>
+					
+				</form>
+					
+			</div>
+	   	</div>
+			
+			
+	</div>
+	<br clear="all"/>
+	<br clear="all"/>
+				
+	
+
+	
+	<div id="closeFileDialog" title="Dispose File?" style="display:none">
+		
+				<span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+				<span style="text-align:justify;font-size:13px;">
+					After closing a file, it can only be accessed as a Back File. Are you sure you want to send this file to the record room? 
+				</span>
+				<form id="fileActionCloseFrm" action="/ddfs/files/file.do?_decoration=true&fileAction=closeFile" method="POST">
+					<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+					<input type="hidden" name="refreshParent" value="true" />
+				</form>
+	</div>
+	
+	<div id="addtoCloseFileDialog" title="Add File to Close File" style="display:none">
+		<div id="fileSearchCont" style="display: block"></div>
+	</div>
+	<div id="transferFileDialog" title="Transfer File" style="display:none">
+	<form id="filTransferForm" name="filTransferForm">
+			<div class="col-md-12">
+			<div class="filetransform-radio">
+				<div class="radio radio-primary col-md-6">
+			        <input name="file-transfer-type" class="fileTransferRadio" id="radio-without-sequence" value="filetransfer-without-sequence" type="radio" checked="">
+			        <label for="radio-without-sequence">File Ownership Transfer without new sequence number</label>
+		        </div>
+		        
+			        <div class="radio radio-primary col-md-6">
+				        <input name="file-transfer-type" class="fileTransferRadio" id="radio-with-sequence" value="filetransfer-with-sequence" type="radio">
+				        <label for="radio-with-sequence">File Ownership Transfer with new sequence number </label>
+			        </div>
+		        
+	        </div>
+	        </div>
+	    	<div id="withoutSeqDropDown">
+	    	<div class="col-md-6 form-group">
+      		<label class="mandatory">Section</label>
+      			<select name="newOwnerSectionId" id="newOwnerSectionId" class="form-control">
+					<option value="all">-- All --</option>
+					
+						<option value="c7f78a2b-c647-405e-b98f-f7cef6d5bb85" >
+							New Section
+						</option>
+					
+						<option value="24471793-a1f9-4e4f-b7f4-d2028b43d238" >
+							sec1
+						</option>
+					
+						<option value="be04eaa1-c4dc-4f70-8836-9d43b74edeab" >
+							Section A
+						</option>
+					
+				</select>
+			<span class="w20 float-left alert failure mandatory" style="display:none;">* mandatory field</span>
+			</div>
+	    	<div class="col-md-6 form-group">
+		    		<label class="mandatory " >Seat</label>
+				    	<select id="transferSeat" name="transferSeat" class="form-control">
+				    		<option value="">-- Select --</option>
+							
+							
+								<option value="7eeba957-20d2-40e4-9461-7279242f1cee" >
+									OSPYN - SEAT-1 - [Kapil kumar]
+								</option>
+							
+							
+							
+								<option value="ca827207-0cf0-44bb-8f11-27a11f827e28" >
+									OSPYN - SEAT-4 - [ABCD .]
+								</option>
+							
+							
+							
+							
+						</select>
+				<span class="w20 float-left alert failure mandatory" style="display:none;">* mandatory field</span>
+			</div>
+			
+			</div>
+			<div id="withSeqDropDown" style="display:none;">
+			<div class="col-md-6 form-group">
+					<label class="mandatory">Department</label>
+					
+						<select name="departmentId"  id="departmentId" class="form-control">
+							<option value="">-- Select --</option>
+							
+							<!-- 	
+								
+									
+								
+								<option value="1" >
+									OSPYN  -->
+									
+										<option value="1">
+											OSPYN
+										</option>
+									
+							
+						</select>
+				<span class="w20 float-left alert failure mandatory" style="display:none;">* mandatory filed</span>
+	      	</div>
+      			<div class="col-md-6 form-group">
+	      				<label class="mandatory">Section</label>
+			      			<select name="sectionId" id="sectionId" class="form-control">
+								<option value="All"></option>
+								
+									<option value="c7f78a2b-c647-405e-b98f-f7cef6d5bb85" >
+										New Section
+									</option>
+								
+									<option value="24471793-a1f9-4e4f-b7f4-d2028b43d238" >
+										sec1
+									</option>
+								
+									<option value="be04eaa1-c4dc-4f70-8836-9d43b74edeab" >
+										Section A
+									</option>
+								
+							</select>
+					<span class="w20 float-left alert failure mandatory" style="display:none;">* mandatory filed</span>
+				</div>
+      			<div class="col-md-6 form-group" id="transferSeatDiv">
+      				<label class="mandatory">Seat</label>
+		      			<select name="seatId" id="seatId" class="form-control">
+		      			<option value="" >-- Select --</option>
+							
+							<option value="ca827207-0cf0-44bb-8f11-27a11f827e28">SEAT-4</option>
+							
+							<option value="43625051-c6f8-4582-a3ff-47d24fcec900">SEAT-3</option>
+							
+							<option value="bbb2580d-5f00-4960-8d45-74e4db6c09d4">SEAT2</option>
+							
+							<option value="7eeba957-20d2-40e4-9461-7279242f1cee">SEAT-1</option>
+							
+						</select>
+				<span class="w20 float-left alert failure mandatory" style="display:none;">* mandatory filed</span>
+				</div>
+				</div>
+			<div class="form-section">
+      			<span class="w30 float-left textname align-right">
+      				<label class="p5"></label>
+      			</span>
+      			<span class="w50 float-left">
+      				<label class="p5">
+		      			<input id="transfer-button" type="button" class="btn btn-primary" onclick="submitTransferForm('5fef2c78-e97a-4d79-a9a2-2d2678a4c647')" value="Transfer"  style="display:none"/>
+					</label>
+				</span>
+				</div>	
+	</form>
+	</div>
+	<div id="callbookDialog" title="Add File to Callbook?" style="display:none">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+			The file will be added to Callbook. Are you sure?</p><br clear="all"/>
+			<a onclick="displayReminderInfo()">Add Reminder</a><br clear="all"/>
+		<div id="reminderInfoId" style="display: none;">
+			<span class="inp_text_mandatory" style="width:20%;">Comment</span>
+			<span class="inp_entry">
+				<input type="text" name="comment" maxlength="50" value=" " size="150px;" id="remCommentId"/>
+			</span>	<br clear="all"/>
+			<span class="inp_text_mandatory" style="width:20%;">Due On</span>
+			<span class="inp_entry">
+			<input type="text" name="dueDate" class="datepickericon" type="text"value=" " id="remDueId"/>
+			</span>
+		</div>
+	</div>
+	
+	<div id="fileClosedDialog" title="File Closed!" style="display:none">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+		Initiated the process for closing the file. Please verify after some time.
+		To close this window, press OK. </p>
+	</div>
+	<div id="fileCallbookDialog" title="File added to Callbook!" style="display:none">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+		The file is added to Callbook. To close this window, press OK. </p>
+	</div>
+	<div id="reopenFileDialog" title="Re-Open File?" style="display:none">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+		The file will be re-opened. Are you sure?</p>
+	</div>
+	
+	<div id="fileOpenedDialog" title="File Opened!" style="display:none">
+		<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+		The file is re-opened and is available in your file list. To close this window, press OK. </p>
+	</div>
+	
+	
+	
+	
+		
+	
+	<div id="attachmentDialog" title="New Attachment" style="display:none">
+			<form id="attachmentForm" method="post" action="attachments.do" enctype="multipart/form-data">
+				<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+				<input type="hidden" id="isCurrent" name="isCurrent" value="false"/>
+				<input type="hidden" id="isStockFile" name="isStockFile" value="false" />
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$(function() {
+	$(':input[name^="description"]',$("#attachmentDialog")).keypress(function (e) {  
+		        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {  		        			        
+		          //	$('button').click(); 
+		        	$('#attachmentDialog').dialog('close');
+		       		e.keyCode='';	
+		       		e.which ='';	       
+		           	return false;  
+		        } else {  
+	            	return true;  
+		       }  
+		   });  
+	
+});
+function checkAttachType($fileInput) {
+		var val = $fileInput.value;
+		if(null != val) {
+			var last4 = val.toString().substring(val.length-4,val.length);
+			var last5 = val.toString().substring(val.length-5,val.length);
+			var allowedExtn = false;
+			var allowedExtensions = "";
+			
+					allowedExtensions = allowedExtensions + " " + '.DOC';
+			
+					allowedExtensions = allowedExtensions + " " + '.PNG';
+			
+					allowedExtensions = allowedExtensions + " " + '.ODT';
+			
+					allowedExtensions = allowedExtensions + " " + '.ODS';
+			
+					allowedExtensions = allowedExtensions + " " + '.HTML';
+			
+					allowedExtensions = allowedExtensions + " " + '.JPG';
+			
+					allowedExtensions = allowedExtensions + " " + '.PDF';
+			
+					allowedExtensions = allowedExtensions + " " + '.XLS';
+			
+					allowedExtensions = allowedExtensions + " " + '.PPTX';
+			
+					allowedExtensions = allowedExtensions + " " + '.DOCX';
+			
+					allowedExtensions = allowedExtensions + " " + '.PPT';
+			
+					allowedExtensions = allowedExtensions + " " + '.GIF';
+			
+					allowedExtensions = allowedExtensions + " " + '.ODP';
+			
+					allowedExtensions = allowedExtensions + " " + '.JPEG';
+			
+					allowedExtensions = allowedExtensions + " " + '.XLSX';
+			
+			
+					if ('.DOC' == last4.toUpperCase() || '.DOC' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.PNG' == last4.toUpperCase() || '.PNG' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.ODT' == last4.toUpperCase() || '.ODT' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.ODS' == last4.toUpperCase() || '.ODS' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.HTML' == last4.toUpperCase() || '.HTML' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.JPG' == last4.toUpperCase() || '.JPG' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.PDF' == last4.toUpperCase() || '.PDF' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.XLS' == last4.toUpperCase() || '.XLS' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.PPTX' == last4.toUpperCase() || '.PPTX' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.DOCX' == last4.toUpperCase() || '.DOCX' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.PPT' == last4.toUpperCase() || '.PPT' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.GIF' == last4.toUpperCase() || '.GIF' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.ODP' == last4.toUpperCase() || '.ODP' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.JPEG' == last4.toUpperCase() || '.JPEG' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+					if ('.XLSX' == last4.toUpperCase() || '.XLSX' == last5.toUpperCase() ) {
+						allowedExtn = true;
+					}
+			
+			if(allowedExtn == false) {
+				
+					openPopUpWindow('This file type is unsupported for export and will not be available in FileView or File export.');
+				
+			}
+		}
+}
+
+</script>
+<style>
+#attchmentPanel span.inp_text {text-align: right;float: left;display: block;width: 30%;padding-top: 3px;}
+#attchmentPanel span.inp_entry {padding-left: 10px;float: left;display: block;width: 65%;}
+</style>
+	<div id="attchmentPanel">
+		<input type="hidden" name="action" value="upload"/>
+		<input type="hidden" name="tempOperation" value="false">
+		<input type="hidden" name="sid" value="bbb2580d-5f00-4960-8d45-74e4db6c09d4"/>	
+		<div class="ddfs-search-one-column-container w100">
+				<div class="col-md-12 form-group">
+					<label class="mandatory">Description</label>
+					<span><input name="description"  type="text"  class="form-control"/></span>
+				</div>
+				<div class="col-md-12 form-group">
+					<label>File</label>
+						<input type="file"  class="form-control" id="attachmentFile"  name="file" size="21" onchange="checkAttachType(this)" style="padding: 1px;"/> 
+						 <div id="ajaxLoader" style=" float: left; margin: 1px 0 0;display:none;">
+							<img alt="Loading" src="/ddfs/images/ajax-loader.gif"  style="float: left; margin-right:5px; height: 24px; width: 26px;"/>
+						</div>
+						<label class="text-warning">Note : Maximum upload size is 25MB.</label>
+				</div>
+		</div>
+	</div>
+
+				<br clear="all"/>
+				<span style="padding-left:10px;text-align:left;">
+					
+					<input type="checkbox" name="isStockFile" value="false" style="visibility: hidden;" onclick="setParamForStockFile(this)"/><!-- Add to Stock File -->
+				</span>
+			</form>
+		</div>
+		<div id="attachFromStockFileDialog" title="Attach From Stock File" style="display:none;width:900px;height:400px;">
+			<form id="stockFileAttachmentForm"   name="stockFileAttachmentForm" action="../files/attachments.do">
+				<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+				<input type="hidden" id="isCurrent" name="isCurrent" value="false"/>
+				<input type="hidden" id="isStockFile" name="isStockFile" value="false" />
+				<input type="hidden" name="action" value="attachFromStockFile"/>
+				<input type="hidden" name="tempOperation" value="false">
+				<div id="stockFilesDiv">
+				</div>
+			</form>
+		</div>
+		<div id="attachFromMoMDialog" title="Attach MOM" style="display:none;width:900px;height:400px;">
+			<form id="MOMAttachmentForm"   name="MOMAttachmentForm" action="../meeting/addMomToFile.do" method="post">
+				<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+				<input type="hidden" id="isCurrent" name="isCurrent" value="false"/>
+				<input type="hidden" id="isStockFile" name="isStockFile" value="false" />
+				<input type="hidden" name="action" value="attachFromMoM"/>
+				<input type="hidden" name="tempOperation" value="false">
+				<div id="momFilesDiv">
+				</div>
+			</form>
+		</div>
+	<script>
+	 if (document.getElementById('msgDialog')) {
+	 	displayMessageDialog();
+	 }
+	 function displayReminderInfo() {
+			document.getElementById('reminderInfoId').style.display="block";
+		}
+
+		function hideReminderInfo() {
+			document.getElementById('reminderInfoId').style.display="none";
+		}
+			function closeFileDialog() {
+				
+				var $closeFileDialog = $("#closeFileDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:250,
+					width:325,
+					modal: true,
+					title: 'Dispose File',
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}, 
+					open: function() {
+				      $(this).parents('.ui-dialog-buttonpane button:eq(1)').focus(); 
+				    }
+
+				});
+				
+				$closeFileDialog.dialog('option', 'buttons', 
+						{ 	'Dispose File': function() { 
+									$(".ui-dialog-buttonpane button:contains('Dispose File')").attr("disabled", true)
+		            				.addClass("ui-state-disabled");
+								disablePage();
+								disablePageButtons();
+								$(".ui-dialog-buttonset .ui-button").attr("disabled","disabled");
+								$.post('/ddfs/files/file.do?_decoration=true&fileAction=closeFile', 
+										$("form[id^='fileActionCloseFrm']").serialize(), 
+										function(data){
+											$("#closeFileDialog").dialog('close');
+											JSONObject = eval( "(" + data + ")" ); 
+								            if (JSONObject.ERROR != 'true' && window.opener) {
+								            	window.opener.refreshData();
+								            	$('#fileActionContainer').hide();
+								            	$('#attachmentActions').hide();
+								            	
+								            	displayFileClosedDialog();
+								            	return false;
+								            } else if (JSONObject.ERROR == 'true') {
+								            	openPopUpWindow(JSONObject.MSG);
+								            }
+											return false;
+										});
+							 },
+							 'Cancel': function() {
+								$(this).dialog('close');
+								return false;
+							 }
+						});
+				$closeFileDialog.dialog('open');
+				return false;
+			}
+
+			function AddToCloseFileDialog(fileNo) {
+
+				$addToCloseFileDialog = $("#addtoCloseFileDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: true,
+					height:500,
+					width:900,
+					modal: true,
+					title: "Add File To Close File",
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0
+					}
+				});
+
+				$addToCloseFileDialog.dialog('option', 'buttons',{
+				'Add To Closed File' : function() {
+					formSubmission(fileNo,'file');
+				},	 
+				'Cancel': function() {
+					$(this).dialog('close');
+					return false;
+				 }
+				});
+
+					
+				$addToCloseFileDialog.dialog('open');
+
+			}
+
+			var $transferFileDialog = null;
+			function transferFile(fileNo) {
+
+				$transferFileDialog = $("#transferFileDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:440,
+					width: 700,
+					modal: true,
+					title: "File Ownership Transfer",
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0
+					},
+				 	open: function () {
+					 	$("#newOwnerSectionId").val("all");
+					 	$("#newOwnerSectionId").trigger("change");
+				    }
+				});
+				$transferFileDialog.dialog('option', 'buttons',{
+					'Transfer' : function() {
+						$('#transfer-button').trigger('click');
+					},	 
+					'Cancel': function() {
+						$(this).dialog('close');
+						return false;
+					 }
+				});
+				$transferFileDialog.dialog('open');
+				
+			}
+
+			function callbookDialog($frm) {
+
+				hideReminderInfo();
+				var $callbookDialog = $("#callbookDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:210,
+					width:400,
+					modal: true,
+					title: 'Add File to Callbook',
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+				
+				$callbookDialog.dialog('option', 'buttons', 
+						{ 	'Add to Callbook': function() {
+								var comment = $("#remCommentId").val();
+								var due = $("#remDueId").val();
+								document.fileActionCallbookFrm.remCommentHiddenId.value=comment;
+								document.fileActionCallbookFrm.remDueHiddenId.value=due;
+								$(this).dialog('close');
+								disablePage();
+								$.post($frm.action, $("form[id^='" + $frm.id + "']").serialize(), 
+										function(data){
+											JSONObject = eval( "(" + data + ")" ); 
+								            if (JSONObject.ERROR != 'true' && window.opener) {
+								            	window.opener.refreshData();
+								            	$('.').hide();
+								            	$('#fileActionContainer').hide();
+								            	$('#attachmentActions').hide();
+								            	return displayFileCallbookDialog();
+								            } else if (JSONObject.ERROR == 'true') {
+								            	openPopUpWindow(JSONObject.MSG);
+								            }
+											return false;
+										});
+							 },
+							 'Cancel': function() {
+								$(this).dialog('close');
+								return false;
+							 }
+						});
+				$callbookDialog.dialog('open');
+				return false;
+			}
+			
+			function reopenFileDialog($frm) {
+
+				var $reopenFileDialog = $("#reopenFileDialog").dialog({
+					autoOpen: false,			
+
+					bgiframe: true,
+					resizable: false,
+					height:180,
+					modal: true,
+					title: 'Re-Open File',
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+				
+				$reopenFileDialog.dialog('option', 'buttons', 
+						{ 	'Re-Open File': function() {
+								$(this).dialog('close');
+								disablePage();
+								$.post($frm.action, $("form[id^='" + $frm.id + "']").serialize(), 
+										function(data){
+											JSONObject = eval( "(" + data + ")" ); 
+								            if (JSONObject.ERROR != 'true' && window.opener) {
+								            	window.opener.refreshData();
+								            	$('#fileActionReopenContainer').hide();
+								            	return displayFileOpenedDialog();
+								            } else if (JSONObject.ERROR == 'true') {
+								            	openPopUpWindow(JSONObject.MSG);
+								            }
+											return false;
+										});
+							 },
+							 'Cancel': function() {
+								$(this).dialog('close');
+								return false;
+							 }
+						});
+				$reopenFileDialog.dialog('open');
+				return false;
+			}
+
+			function displayFileClosedDialog() {
+				
+				var $forwardDialog = $("#fileClosedDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:180,
+					modal: true,
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+				$('#fileClosedDialog').dialog('option', 'buttons', 
+						{ 	'OK': function() {
+								var $win=window.open("","_self");
+								$win.close();
+							 }
+						});
+				$("#fileClosedDialog").dialog('open');
+			}
+
+			function displayFileCallbookDialog() {
+
+				
+				var $forwardDialog = $("#fileCallbookDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:180,
+					modal: true,
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+				$('#fileCallbookDialog').dialog('option', 'buttons', 
+						{ 	'OK': function() {
+								var $win=window.open("","_self");
+								$win.close();
+							 }
+						});
+				$("#fileCallbookDialog").dialog('open');
+			}
+
+			function displayFileOpenedDialog() {
+				
+				var $fileOpenedDialog = $("#fileOpenedDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:180,
+					modal: true,
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+				$('#fileOpenedDialog').dialog('option', 'buttons', 
+						{ 	'OK': function() {
+								var $win=window.open("","_self");
+								$win.close();
+							 }
+						});
+				$("#fileOpenedDialog").dialog('open');
+			}
+
+			function mergePartFileToParent() {
+				var confirmMsg = "You will not be able to modify any content in this file after it is merged. Are you sure you want to merge this part file to its parent?";
+				if(false == confirm(confirmMsg))
+					return false;
+				disablePage();
+				disablePageButtons();
+				$.post('/ddfs/files/file.do?_decoration=true&fileAction=mergePartFile&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647', 
+						{}, 
+						function(data){
+							JSONObject = eval( "(" + data + ")" ); 
+							if (JSONObject.ERROR != 'true' && window.opener) {
+				            	window.opener.refreshData();
+				            	window.close();
+				            	return false;
+				            } else if (JSONObject.ERROR == 'true') {
+			            	openPopUpWindow(JSONObject.MSG);
+				            } 
+							return false;
+						});
+			}
+			function clearDate(){
+				$('#duedate').val('');
+				}
+			
+			function toggleSenderInfo() {
+				var box = document.getElementById('senderInfoContainer');
+				if (box) {
+					var state = box.style.display;
+				    if (state == '' || state == 'block') {
+				    	$("#senderInfoContainer").hide(150);
+				    	$("#senderInfoContainerIcon i").toggleClass("fa-angle-double-down fa-angle-double-up");
+				    } else {
+				    	$("#senderInfoContainer").show(150);
+				    	$("#senderInfoContainerIcon i").toggleClass("fa-angle-double-down fa-angle-double-up");
+				    }
+				}
+			}
+			
+			function toggleOtherInfo() {
+				var box = document.getElementById('otherInfoContainer');
+				if (box) {
+					var state = box.style.display;
+				    if (state == '' || state == 'block') {
+				    	$("#otherInfoContainer").hide(150);
+				    	$("#otherInfoContainerIcon i").toggleClass("fa-angle-double-down fa-angle-double-up");
+				    } else {
+				    	$("#otherInfoContainer").show(150);
+				    	$("#otherInfoContainerIcon i").toggleClass("fa-angle-double-down fa-angle-double-up");
+				    }
+				}
+			}
+			
+			function saveInformation(){		
+				var senderEmail = $("#senderEmail").val();
+				var senderContact = $("#senderContact").val();
+				var isValid = true;
+				if ('' != senderEmail && "" != senderEmail &&  null != senderEmail) {
+					isValid = validateEmail(senderEmail);
+					if(!isValid) {
+						displayCommonMessageDialog("Enter valid Contact Email.");
+					}
+				}
+				if (isValid) {
+					if ('' != senderContact && "" != senderContact &&  null != senderContact) {
+						isValid = validatePhone(senderContact);
+						if(!isValid) {
+							displayCommonMessageDialog("Enter valid Contact Number.");
+						}
+					}
+				}
+				if (isValid) {
+					$.ajax({
+						  type : "POST",			    
+						  url: "/ddfs/files/viewInformation.do?_decoration=false&fileAction=saveInfo", 
+						  success:  function(response){
+							  displayMsg("File information updated.");
+							  var description = $("#subjectDescription").val();
+							  var subject = $("#mainSubject").val();
+							 // $("#FileTopic1").html("Subject : "+subject+" Subject Description: "+description);
+							  if (window.opener && window.opener.refreshData) {
+								  if(!window.opener.closed) {
+									  window.opener.refreshData();
+								  }
+							  }
+						  },
+						  error:function(xhr){
+							  displayCommonMessageDialog("An Error Occured In Saving File information");
+						  },
+						 data : $("form[name='fileInfoForm']").serialize() 
+					 });
+				}
+				
+			}
+			function validateEmail(senderEmail) {
+				var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+				if (filter.test(senderEmail)) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			function validatePhone(senderContact) {
+				var regex1 = /^[0-9-+]+$/;
+				if (regex1.test(senderContact) && senderContact.length <= 14 ) {
+					return true;
+			    }else {
+			       return false;
+			    }
+			}
+		function displayMsg(msg) {
+			var $msgCommonDialog = $('<div id="msgCommonDialog"><span class="popup-info">' + msg + '</span></div>').dialog({
+				autoOpen: false,
+				bgiframe: true,
+				resizable: false,
+				height : 'auto',
+				width:400,
+				modal: true,
+				title: 'Alert',
+				overlay: {
+					backgroundColor: '#000',
+					opacity: 0.1
+				},
+				closeOnEscape: false,
+				close: function(){
+					$msgCommonDialog.dialog("destroy").remove();
+				}
+			});
+
+			$msgCommonDialog.dialog('option', 'buttons',
+					{
+						 'Ok': function() {
+							$(this).dialog('close');
+							window.location.reload();
+							
+						 }
+					});
+			$msgCommonDialog.dialog('open');
+			return false;
+		}		
+	</script>
+
+			</div>
+			
+				
+			
+		</div>
+		<br clear="all"/>
+		<script>
+			function setParamForAttachForm(chkbox) {
+				if(chkbox.checked) {
+					$("#isCurrent").val("true");
+				} else {
+					$("#isCurrent").val("false");
+				}
+			}
+		</script>
+
+		<div id="deleteDialog" title="Delete?" style="display:none">
+			<div class="info-message" style="padding: 0px 0px 0px 34px;">	The item will be permanently deleted. Are you sure? 
+			</div>
+		</div>
+
+		<div id="forwardDialog" title="Forward" style="display:none">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+			
+			
+			The File is forwarded to . To close this window, press OK.</p>
+		</div>
+
+		<div id="attachmentEditDialog" title="Edit attachment" style="display:none">
+			<form id="attachmentEditForm"   action="../files/file.do?fileAction=editAttachment" method="post">
+				<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$(function() {
+	$(':input[name^="description"]',$("#attachmentEditDialog")).keypress(function (e) {  
+		        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {  		        			        
+		          //	$('button').click(); 
+		        	$('#attachmentEditDialog').dialog('close');
+		       		e.keyCode='';	
+		       		e.which ='';	       
+		           	return false;  
+		        } else {  
+	            	return true;  
+		       }  
+		   });  
+});
+
+
+</script>
+	<div id="attchmentPanel">
+		<input type="hidden" name="action" value="upload"/>
+		<input type="hidden" name="attachmentId"/>
+		<input type="hidden" name="tempOperation" value="false">
+		<div style="width:400px;float:left;padding:6px;">
+			<fieldset style="padding:6px; border:1px solid #5C9CCC; background:#FEFEFE">
+				<span class="inp_text" style="width:70px;">Description</span>
+				<span class="inp_entry"><input name="description" id="attachmentDesc" style="width:272px;" type="text"/></span>
+				<br clear="all"/>
+				
+			</fieldset>
+		</div>
+	</div>
+
+			</form>
+		</div>
+
+		<script>
+
+			if (document.getElementById('msgDialog')) {
+			 	displayMessageDialog();
+			}
+
+			$(document).ready(function() {
+			 	$('title').html('48/2019/OSPYN');
+			});
+
+			function UnparkFormSubmit() {
+				var url = "/ddfs/files/addRef.do";
+				$.post( url, {
+					"fileAction": "unparkDirect",
+					"fileNo": "5fef2c78-e97a-4d79-a9a2-2d2678a4c647"},
+					      function(response) {
+					      openPopUpWindow('File Unparked');
+					      location.reload();
+					   }
+					    );
+				}
+			
+			function showParkedFileDialog() {
+				var $parkedDialog = $("#parkedFileDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					width:300,
+					modal: true,
+					title: 'Parked file',
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+				
+				
+				$parkedDialog.dialog('option', 'buttons',
+						{
+
+					'Unpark': function() {
+						UnparkFormSubmit();
+						$parkedDialog.dialog('close');
+					},
+					'Ok': function() {
+						$parkedDialog.dialog('close');
+					}
+					});
+				
+				
+				
+
+
+				$parkedDialog.dialog('open');
+
+				return false;
+			}
+
+		</script>
+
+		<div id="addChitDialog" title="Forward File?" style="display:none;float: inherit">
+			<p>
+				<br clear="all" />
+				<span  style="float:left; margin:0 7px 10px 0;">
+					<img src="/ddfs/images/alert-icon.png" height="24" width="24" style="vertical-align:middle; margin-top:-6px;"/>
+				</span>
+				<label style="float:left; margin-left:0px;">Enter text if you need to add a sticky note.</label>
+				<br clear="all" />
+				<label style="float:left;margin-left:10px;margin-top:0px;">
+					<img src="/ddfs/images/note.png" height="75" width="61"/>
+				</label>
+				<span class="inp_entry" style="float:left;;margin-left:0px;">
+					<textarea id="chitContentInput" style="width:250px; height: 100px; border:1px dashed #cd92cc; background-color:#fef7fe; color:#666;" ></textarea>
+				</span>
+			</p>
+		</div>
+
+		<div id="parkedFileDialog" title="Parked File" style="display:none">
+			<div class="info-message" style="background-size: 18px!important; padding: 5px 5px 5px 28px;">Please note - This is a parked file.</div>
+		</div>
+
+		<div id="takeFileDialog" title="Pull File?" style="display:none">
+		<div class="info-message" style="padding: 5px 0px 5px 34px;">The file will be moved to your seat. Are you sure?
+		</div>
+			
+			<!-- <p><br clear="all" /><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+			The file will be moved to your seat. Are you sure?</p> -->
+		
+			<br clear="all" />
+			<label class="mandatory">Reason for pulling this file</label>
+			<br clear="all" />
+			<span>
+				<textarea id="pullFileComment" name="pullFileComment"></textarea>
+			</span>
+		</div>
+		<div id="reCallFileDialog" title="ReCall File?" style="display:none">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+			The file will be moved to your seat. Are you sure?</p>
+		</div>
+
+		<div id="fileTakenDialog" title="File Taken Back!" style="display:none">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+			The file is taken and is available in your file list. To close this window, press OK. </p>
+		</div>
+		<div id="actionInProgressDialog" title="Processing ..." style="display:none">
+			<p style="float:left;">
+			<img alt="Loading" src="/ddfs/images/ajax-loader.gif" height="31" width="31" style="padding-left:45px; top:20px; position:absolute;"/>
+			</p>
+		</div>
+
+		<div id="createBookmarkItemDialog" title="Create New Bookmarkable Item" style="display:none">
+			<p style="margin:0px 0px 15px 0px;"><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 5px 0;"></span>
+				Please select a document from the following list.
+				<br clear="all" />
+				<form id="createBookmarkItemFrm" action="/ddfs/files/file.do?_decoration=false&fileAction=createBookmarkableItem" method="POST">
+					<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+					<input type="hidden" name="refreshParent" value="true" />
+					<div class="inp_entry" id="bookmarkItemsCombo" style="text-align:left;height:175px;width:97%;margin-bottom:10%;"></div>
+					<div class="ddfs-search-two-column-container" style="border: 1px solid;width: 97%;padding: 2%;border-color: #C5CACF;margin-left: 0px;margin-top: 1%;">
+						<div class="form-column">
+						    <label class="mandatory">Description</label>
+							<textarea name="descForBookmark"></textarea>
+						</div>
+						<div class="form-column">
+							<div style="width:50%;margin-top:8%">
+								<label class="mandatory" for="startPage" style="width:50%;">Page From</label>
+								<input type="text" id="startPage" name="startPage" style="width:60px;" maxlength="4"/>
+							</div>
+							<div style="width:50%;margin-top:1%">
+								<label class="mandatory" for="endPage" style="width:50%;">Page To</label>
+								<input type="text" id="endPage"  name="endPage" style="width:60px;" maxlength="4"/>
+							</div>
+							<input type="hidden" name="isBookMarkItem" value="true">
+						</div>
+	       			</div>
+			   		<input type="hidden" name="test" value=""/>
+			   		<input type="hidden" id="rectxcord"/>
+					<input type="hidden" id="rectycord"/>
+					<input type="hidden" id="rectwid"/>
+					<input type="hidden" id="rectheight"/>
+				</form>
+				</p>
+		</div>
+
+		<div id="createSplitDocumentDialog" title="Split Document" style="display:none">
+				<div class="info-message">Please select a document from the following list.</div>
+				<form id="createSplitDocumentFrm" action="/ddfs/files/file.do?_decoration=false&fileAction=createBookmarkableItem&excludeBookmark=false" method="POST">
+					<input type="hidden" name="refreshParent" value="true" />
+					<div  id="splitDocumentCombo" >
+					</div>
+					<br clear="all"/><br clear="all"/>
+					<div class="pull-left w100">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<label class="mandatory">Document Title</label>
+							<input type="text" name="descForBookmark" class="form-control" maxlength="200"/>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+						<label style="float: left; width: 100%" class="mandatory">Pages  </label>
+						<div class="w47 float-left" style="margin-right: 6%;">
+							<input type="text" id="startPage" name="startPage" class="form-control"  placeholder="From" maxlength="4"/>
+						</div>
+						<div class="w47 float-left" >	
+							<input type="text" id="endPage"  name="endPage" class="form-control"  placeholder="To" maxlength="4"/>&nbsp;
+						</div>
+						</div>
+						<input type="hidden" name="isBookMarkItem" value="false">
+						 
+	       			</div>
+			   		<input type="hidden" name="test" value=""/>
+			   		<input type="hidden" id="rectxcord"/>
+					<input type="hidden" id="rectycord"/>
+					<input type="hidden" id="rectwid"/>
+					<input type="hidden" id="rectheight"/>
+				</form>
+				</p>
+		</div>
+
+		
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+#viewDefaultForwardDialog form {
+    float: left;
+    padding: 6px 1%;
+    width: 98%;
+}
+#viewDefaultForwardDialog form label.forwardLabel {color: #067ba9;  float: left;  }
+#viewDefaultForwardDialog form span.forwardSpan { color: #b56324;
+    float: left;
+    font-weight: bold;}
+#viewDefaultForwardDialog form input.form-button {float: right;}
+.ui-autocomplete {
+    max-height: 230px;
+    overflow-y: auto;   /* prevent horizontal scrollbar */
+    overflow-x: hidden; /* add padding to account for vertical scrollbar */
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+    height: 250px;
+}
+</style>
+
+<script type="text/javascript">
+/* $(document).ready(function(){
+	$('#actionbar li span').attr('style','');
+	$('#book_mark_id span').css('background','none');
+	$('#forward_id span').css('background','none');
+	
+}); */
+</script>
+
+
+
+
+
+		<div id="actionbar" >
+		
+				
+					
+					   	<ul>
+					      <li id="export_id" class="" title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export File As PDF">
+						  	<a id="nonAjaxLink" href="#" onclick="return viewExportables();">
+				      			<i class="fa fa-file-pdf-o"></i>
+				      			Export
+				      	    </a>
+					      </li>
+					   	</ul>
+				   	
+				   	
+				   	
+				   	
+						
+				   	
+				   	
+				   	
+			   	
+			   	
+			   					
+			   					
+				   	
+					   	<span class="jx-separator-left"></span>
+					   	<ul> 
+					      <li class="" title="Forward File Within Hierarchy" id="forward_id">
+					           
+					      	<a id="nonAjaxLink" href="#" onclick="return viewDefaultForwardOptions();">
+					      		<i class="fa fa-forward"></i>
+				      		    Forward
+				      		</a>
+		      		      
+					      </li>
+					   	</ul>
+				   	
+				   	
+				   	
+				   	
+				   		<span class="jx-separator-left"></span>
+				   		
+				   		
+				   		
+				   			
+				   		
+				   		
+					   		
+					   		
+							   	<ul >        
+							      <li id="forwardplusgen_id"  title="Forward File Outside Hierarchy" >
+								    
+								  <a id="nonAjaxLink" href="#" onclick="return viewForwardOptions();" > 
+						      			<i class="fa fa-forward"></i>
+						      			Forward <sup><i>++</i></sup>
+						      	     </a>
+						      	  
+							      </li>
+							   	</ul>
+						   	
+					   	
+				   	
+				   	
+				   	
+				
+				
+				
+				
+					
+					   	
+					
+				
+			   	
+			   	
+			   	
+				   	
+			   	
+			   	
+			   	
+			   	
+			   	
+				    
+				    
+				   	
+			   
+			   	
+			   	
+			   	
+			   	
+				   	
+					   	<span class="jx-separator-left"></span>
+					   	<ul>        
+					      <li id="share_id" class="" title="Share File">
+					      	<a id="nonAjaxLink" href="#" onclick="return shareFile();">
+					      		<i class="fa fa-share-alt"></i>
+				      			Share
+				      		</a>
+					      </li>
+					   	</ul>
+				   	
+			   	
+			   	
+			   	
+	 				<span class="jx-separator-right"></span>
+				   	<ul class="jx-bar-button-right">
+				      <li id="drafts_id" class="" title="Drafts"><a href="#"><img src="/ddfs/images/draftb.png" alt="" height="16" width="16"  />&nbsp;Drafts</a>
+						  <ul>
+						 	
+						 		
+						 			
+							 		<li id="cb14c74b-2381-44a9-bd7e-e60543cccf71" class="">
+								 		<a href="/ddfs/draft/draftsContainerDisplay.do?_decoration=true&fileAction=viewDrafts&draftNo=cb14c74b-2381-44a9-bd7e-e60543cccf71&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&displayFileNo=48/2019/OSPYN&originalDeptId=1&clazz=circular&language=en">
+								 			<span style="line-height:120%;">
+								 				<u>Draft #1 - Circular/Proceedings/Notice</u> <br />
+								 				<b>Topic: </b> 
+								 			</span>
+								 		</a>
+							 		</li>
+						 		
+						 	
+						  </ul>
+				      </li>
+				   	</ul>
+			   	
+			   	
+			   
+			   		
+			   			<span class="jx-separator-left"></span>
+			   			
+						   	<span class="jx-separator-right"></span>
+						   	<ul class="jx-bar-button-right">
+						      <li id="saveinfo_id" class="" title="Save Information">
+						      	<a id="nonAjaxLink" href="#" onclick="return saveFileInfoFromActionBar();"> 
+						      		 
+						      		<i class="fa fa-save"></i>
+						      		Save Information
+						      	</a>
+						      </li>
+						   	</ul>
+					   	
+				   	
+				   
+			
+			   	  	
+			   	 
+			   	
+				   	
+				   		 <span id="attachToWorkFlowActionBar">  
+						   	<span class="jx-separator-right"></span>
+						   	<ul class="jx-bar-button-right">
+						      <li id="preview_id" class="" title="Attach To Workflow">
+						      		
+						      		
+						      			
+						      		
+						      		<a id="nonAjaxLink" href="#" onclick="return showAttachToWorkflowDialog('/ddfs', '5fef2c78-e97a-4d79-a9a2-2d2678a4c647', '0', 'false','24471793-a1f9-4e4f-b7f4-d2028b43d238','1');"> 
+						      			<i class="fa fa-search"></i>
+						      			Attach To Workflow
+						      		</a>
+							   	</li>
+						   	</ul>
+					   	</span>
+				   	
+				   	
+			   
+		   	
+			   	
+			   	
+			   	
+			   	
+			   	
+			   	
+				   	<span id="draftSaveBtnFromActionBar" style="display:none;">
+					   	<span class="jx-separator-right"></span>
+					   	<ul class="jx-bar-button-right">
+					      <li id="savedraft_id" class="" title="Save Draft">
+					      	<a id="nonAjaxLink" href="#" onclick="return saveDraftFromActionBar();"> 
+					      		<i class="fa fa-save"></i>
+					      		Save Draft
+					      	</a>
+					      </li>
+					   	</ul>
+					 </span>
+				 
+				 <span id="draftPreviewBtnFromActionBar" style="display:none;">  
+				   	<span class="jx-separator-right"></span>
+				   	<ul class="jx-bar-button-right">
+				      <li id="preview_id" class="" title="Preview Draft">
+				      		<a id="nonAjaxLink" href="#" onclick="return viewDraftPreview();"> 
+				      			<i class="fa fa-search"></i>
+				      			Preview
+				      		</a>
+					   	</li>
+				   	</ul>
+			   	</span>
+			   	
+			   	<span id="draftApproveBtnFromActionBar" style="display:none;">  
+				   	<span class="jx-separator-right"></span>
+				   	<ul class="jx-bar-button-right">
+				      <li id="approve_id" class="" title="Approve Draft">
+				      		<a id="nonAjaxLink" href="#" onclick="return approveDraftFromActionBar();"> 
+				      			<i class="fa fa-thumbs-up"></i>
+				      			Approve
+				      		</a>
+					   	</li>
+				   	</ul>
+			   	</span>
+			   	
+			   	<span id="draftCreateDocBtnFromActionBar" style="display:none;">  
+				   	<span class="jx-separator-right"></span>
+				   	<ul class="jx-bar-button-right">
+				      <li id="createdoc_id" class="" title="Create Document">
+				      		<a name="createDocFromActionBar" id="nonAjaxLink" href="#" onclick="return createDocFromActionBar();"> 
+				      			<i class="fa fa-file"></i>
+				      			Create Document
+				      		</a>
+					   	</li>
+				   	</ul>
+			   	</span>
+			   	
+			   	 
+			   	
+			   	
+			   	 
+			   	
+			   	 
+			   	
+			   	
+				   	
+					   	<span class="jx-separator-right"></span>
+						<ul class="jx-bar-button-right">
+						   <li id="createdoc_id" class="" title="Create Document">
+						      	<a name="nonAjaxLink" id="addNewSeatSpChit" href="#" onclick="return addChitDialog('/ddfs');"> 
+						      		<i class="fa fa-file"></i>
+						      		Sticky Notes
+						      	</a>
+							</li>
+						</ul>
+					
+				
+			   	
+			   	
+			</div>
+			
+			<input type="hidden" id="targetDraftsForApproval" name="targetDraftsForApproval" value="0"/>
+			
+			
+			<div id="viewDefaultForwardDialog" title="Forward File" style="display:none;line-height:20px;text-align:left;">
+				<div class="noteAlert" style="padding:4px 4px 3px 5px;"></div>
+				
+					
+				
+				
+				<div class="chit-textbox-div col-md-12">
+				<label style="float:left;margin-left:10px;margin-top:0px;">
+					<img src="../images/sticky-note.png"  height="62" width="60"/>
+				</label>
+				<span class="inp_entry" style="float: left; margin-left: 2%; width: 86%;">
+					<textarea id="chitContentDefaultOptionsInput" placeholder="Enter text if you need to add a sticky note" style="width: 100%; float: left;" class="chit-textbox"></textarea>
+				</span>
+				</div>
+				<br clear="all"/>
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+					
+						
+													
+								
+									<form name="expSeatFrm1" id="fileActionForwardExpectedFrm1" action="/ddfs/files/file.do?_decoration=true" method="POST">
+										<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+										<input type="hidden" name="instanceDisplayNo" value="48/2019/OSPYN" />
+										<input type="hidden" name="linked" value="false"/>
+										<input type="hidden" name="merged" value="false"/>
+										<input type="hidden" name="forwardGroupId" value=""/>
+										<input type="hidden" name="closed" value="false"/>
+										<input type="hidden" name="owner" value="bbb2580d-5f00-4960-8d45-74e4db6c09d4"/>
+										<input type="hidden" name="fileAction" value="forward" />
+										<input type="hidden" name="departmentId" value="1" />
+										<input type="hidden" name="refreshParent" value="true" />
+										<input type="hidden" name="currentSeatId" value="" />
+										<input type="hidden" name="originalDeptId" value="1"/>
+										<input type="hidden" name="seatId" value="7eeba957-20d2-40e4-9461-7279242f1cee"/>
+										<input type="hidden" id="expSeatChitContent1" name="chit" value="" />
+										<input id="expSeatFrmUnSubmittedNote" type="hidden" name="unSubmittedNote" />
+										
+											<div class="col-md-11 ">
+											<label class="forwardLabel" >Forward To </label>
+													<span class="forwardSpan form-control">
+														SEAT-1 ( Kapil kumar )
+													
+													</span>
+											</div>
+											<div class="col-md-1" style="margin-top: 19px; padding: 0;">
+												<input name="submit-button" type="button" class="btn btn-primary pull-right" onclick="chitAddDialogBox('fileActionForwardExpectedFrm1', 'expSeatChitContent1','SEAT-1')" value="Send" />
+												</div>
+											
+									</form>
+								
+							
+						
+					
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+										
+						
+														
+							
+							
+															
+								
+								    	
+								
+								
+								
+								
+									
+								
+								
+								
+								
+								<form name="expSeatFrm2" id="fileActionForwardExpectedFrm2" action="/ddfs/files/file.do?_decoration=true" method="POST">
+									<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+									<input type="hidden" name="instanceDisplayNo" value="48/2019/OSPYN" />
+									<input type="hidden" name="linked" value="false"/>
+									<input type="hidden" name="merged" value="false"/>
+									<input type="hidden" name="forwardGroupId" value=""/>
+									<input type="hidden" name="closed" value="false"/>
+									<input type="hidden" name="fileAction" value="forward" />
+									<input type="hidden" name="departmentId" value="1" />
+									<input type="hidden" name="refreshParent" value="true" />
+									<input type="hidden" name="currentSeatId" value="" />
+									<input type="hidden" name="originalDeptId" value="1"/>
+									<input type="hidden" name="owner" value="bbb2580d-5f00-4960-8d45-74e4db6c09d4"/>
+									<input type="hidden" id="expSeatChitContent2" name="chit" value="" />
+									<input id="expSeatFrmUnSubmittedNote" type="hidden" name="unSubmittedNote" />
+									<span id="childHierarchyForwardOptions"></span>
+								</form>
+								
+							
+						
+						
+			</div>
+			<div id="viewForwardOptionsDialog" title="Forward File Outside Hierarchy" style="display:none;line-height:20px;">
+			    <div class="noteAlert" style="padding:4px 4px 3px 5px;"></div>
+				
+					
+				
+				<div style="float:left;width:100%">
+					<div class="chit-textbox-div">
+					<label style="float:left;margin-left:10px;margin-top:0px;">
+						<img src="../images/sticky-note.png"   height="75" width="61"/>
+					</label>
+					<span class="inp_entry" style="float: left; margin-left: 2%; width: 86%;">
+						<textarea id="chitContentForwardOptionsInput" class="chit-textbox" placeholder="Enter text if you need to add a sticky note" style="width: 100%; float: left;"></textarea>
+					</span>	
+					</div>
+					<br clear="all"/><br clear="all" />
+				</div>
+				<div style="float:left;width:100%">
+					<div class="permission-tab-div" id="forwardPlusTab">
+						<a href="javascript:void(0);" onclick="showTtab('fptab-1','fptab-2',this)" class="permission-tab-active" id="fptb1Atag">Within Department</a>
+						
+							
+								<a href="javascript:void(0);" onclick="showTtab('fptab-2','fptab-1',this)" id="fptb2Atag">Outside Department</a>
+							
+						
+					</div>
+					<div id="fptab-1">
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$(function(){
+    $(document).ready(function(){		
+		$(".chosen-select").chosen({
+		    disable_search_threshold: 1,
+		    no_results_text: "Oops, nothing found!",
+		    width: "100%"
+		  });
+	$(".chosen-select").next(".chosen-container").find(".chosen-drop").css("cssText", "bottom: 28px !important; top: auto !important; border-bottom: 0 none; border-top: 1px solid #aaa;");
+	});
+	
+	$("#fileActionForwardToSameDeptFrm").relatedSelects({
+		onChangeLoad: '../getSeatsForSection.do?forward=true',
+		selects: ['sectionId', 'seatId'],
+		onLoadingEnd : function(){
+			$(".chosen-select").trigger("chosen:updated");
+		}
+	});
+	
+	
+});
+
+</script>
+<style>
+/* .chosen-select .chosen-container .chosen-drop {
+    border-bottom: 0 none;
+    border-top: 1px solid #aaa;
+    bottom: 28px!important;
+    top: auto!important;
+} */
+</style>
+
+
+											
+											<div class="forwardboxSelection" style="margin-bottom:14px;">
+												<form name="deptSeatFrm" id="fileActionForwardToSameDeptFrm" action="/ddfs/files/file.do?_decoration=true" method="POST">
+													<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+													<input type="hidden" name="instanceDisplayNo" value="48/2019/OSPYN" />
+													<input type="hidden" name="linked" value="false"/>
+													<input type="hidden" name="merged" value="false"/>
+													<input type="hidden" name="forwardGroupId" value=""/>
+													<input type="hidden" name="closed" value="false"/>	
+													<input type="hidden" name="owner" value="bbb2580d-5f00-4960-8d45-74e4db6c09d4"/>		
+													<input type="hidden" name="fileAction" value="forward" />
+													<input type="hidden" name="refreshParent" value="true" />
+													<input type="hidden" name="currentSeatId" value="" />
+													<input type="hidden" name="originalDeptId" value="1"/>
+													<input type="hidden" name="departmentId" value="1"/>
+													<input type="hidden" id="deptChitContent" name="chit" value="" />
+													<input id="deptFrmUnSubmittedNote" type="hidden" name="unSubmittedNote" />
+													<div class="file-Fwd-feilds">
+													<select id="allSeatDummySelect" style="display: none;">
+														
+															
+																
+															
+																
+															
+																
+															
+																
+															
+														
+													</select>
+														
+														<div class="file-Fwd-div">
+															<label> Section :</label>
+															<select name="sectionId" class="file-fwd-select">
+																<option value="all">-- All --</option>
+																
+																	<option value="c7f78a2b-c647-405e-b98f-f7cef6d5bb85">New Section</option>
+																
+																	<option value="24471793-a1f9-4e4f-b7f4-d2028b43d238">sec1</option>
+																
+																	<option value="be04eaa1-c4dc-4f70-8836-9d43b74edeab">Section A</option>
+																
+															</select>
+														</div>
+														
+														<div class="file-Fwd-div">
+															<label> Seat </label>
+															<select name="seatId" id="deptSeatId" class="file-fwd-select chosen-select" data-placeholder="-- Select --">
+																
+																	
+																
+																	
+																
+																	
+																
+																	
+																
+															</select>
+														</div>
+														<input name="submit-button" style="margin: 24px 0 0 0;" type="button"  onclick="forwardDialog('fileActionForwardToSameDeptFrm','deptChitContent','deptSeatId')"  class="btn btn-success" value="Forward" />
+													</div>
+												</form>
+											</div>
+										
+				    </div>
+			        
+						
+							<div id="fptab-2" style="display:none;">
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+												
+													<div class="forwardboxSelection">
+														<form name="otherDeptSeatFrm" id="fileActionForwardToOtherDeptFrm" action="/ddfs/files/file.do?_decoration=true" method="POST">
+															<input type="hidden" name="fileNo" value="5fef2c78-e97a-4d79-a9a2-2d2678a4c647" />
+															<input type="hidden" name="instanceDisplayNo" value="48/2019/OSPYN" />
+															<input type="hidden" name="linked" value="false"/>
+															<input type="hidden" name="merged" value="false"/>
+															<input type="hidden" name="forwardGroupId" value=""/>
+															<input type="hidden" name="closed" value="false"/>	
+															<input type="hidden" name="owner" value="bbb2580d-5f00-4960-8d45-74e4db6c09d4"/>
+															<input type="hidden" name="fileAction" value="forwardToOtherDept" />
+															<input type="hidden" name="refreshParent" value="true" />
+															<input type="hidden" name="currentSeatId" value="" />
+															<input type="hidden" name="originalDeptId" value="1"/>
+															<input type="hidden" id="otherDeptChitContent" name="chit" value="" />
+															<input id="otherDeptSeatFrmUnSubmittedNote" type="hidden" name="unSubmittedNote" />
+															<div class="file-Fwd-feilds">
+																<div class="file-Fwd-div">
+																	<label>Department</label>
+																	<select name="otherDepartmentId"  id="otherDepartmentId" onChange="javascript:otherDeptForwardChange(this, 'getSeatsForOtherDept.do', 'otherDepartmentId', 'otherDeptSeatIds');"
+																		class="file-fwd-select">
+																		<option value="">-- Select --</option>
+																		
+																			<option value="1">OSPYN</option>
+																		
+																	</select> 
+																</div>	
+																<div class="file-Fwd-div">
+																	<label>Seat </label>
+																	 <span id="otherDeptSeatIds" >
+																	 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<select name="otherDeptSeatId" id="otherDeptSeatId"  class="chosen-select" data-placeholder="-- Select --">
+	<option value="">-- Select --</option>
+	
+</select>
+<script>
+	$(document).ready(function(){		
+		$("#otherDeptSeatId").chosen({
+		    disable_search_threshold: 1,
+		    no_results_text: "Oops, nothing found!",
+		    width: "95%"
+		  });
+	
+	});
+</script>
+																	 </span>
+																</div>
+																<input name="submit-button" type="button" class="btn btn-primary" style="margin: 24px 0 0 0;"
+																	onclick="forwardDialog('fileActionForwardToOtherDeptFrm','otherDeptChitContent','otherDeptSeatId')"  
+																	value="Forward" />
+															</div>
+														</form>
+													</div>
+												
+
+							</div>
+						
+					
+					<br clear="all"/>
+				</div>
+				
+			</div>
+		
+		
+		
+		<div id="confirmDocumentCreation" title="Confirm Document Creation" style="display:none;float: inherit">
+			<span style="float:left;margin-left:0px;">
+			<br clear="all" />
+			<font size="2">
+			Please confirm the format of PDF through 'Preview'. 
+			Format/Content change of PDF after document creation is not allowed.
+			Do you want to continue?</font>
+			<br clear="all"/>		
+			<br clear="all"/>
+			<br clear="all"/>	 
+			
+				<input type="checkbox" id="isStockFileCheckbox" name="isStockFileCheckbox" /> <font size="2">Add Document to Stock File.</font>
+				<span id="publicStockFileSpan" style="display:none;">
+				<input type="checkbox" id="isStockFilePublicCheckbox" name="isStockFilePublicCheckbox"/> <font size="2">Public Stock File?</font>
+				</span>
+			
+			</span>
+		</div>
+		
+		<div id="returnSharedDialog" style="display: none;">
+			<label style=" float: left;  margin: 10px 3%;width: 94%;">Are you sure, you want to return shared file?</label>
+				<span class="file-return-span">
+						
+				</span>	
+		</div>
+		<script>
+			function viewForwardOptions() {
+				var proceedToForward = true;
+				if ($("#targetDraftsForApproval").val() > 0) {
+					var proceedWithoutApproval = confirm('You have 0 draft(s) for approval! Do you wish to forward without approving the draft(s)?');
+					if (!proceedWithoutApproval) {
+						proceedToForward = false;
+						window.location.href = "/ddfs/files/viewDocuments.do?_decoration=true&fileAction=viewDocs&displayFileNo=48/2019/OSPYN&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647";
+					}
+				}
+				if (proceedToForward) {
+					var $viewForwardOptionsDialog = $("#viewForwardOptionsDialog").dialog({
+						autoOpen: false,
+						bgiframe: true,
+						resizable: true,
+						width:800,
+						modal: true,
+						height: 'auto',
+						title: 'Forward File Outside Hierarchy',
+						overlay: {
+							backgroundColor: '#000',
+							opacity: 0.5
+						}
+						
+					});		
+					
+					$viewForwardOptionsDialog.dialog('option', 'buttons', 
+							{ 	
+								 'Close': function() {
+									$viewForwardOptionsDialog.dialog('close');
+								 }
+							});
+					$viewForwardOptionsDialog.dialog('open');
+					if(document.getElementById("notesFrame")!=undefined){
+						if(document.getElementById("notesFrame").contentWindow.getHtmlNote 
+								&& ''==$.trim(document.getElementById("notesFrame").contentWindow.getHtmlNote())) {
+							 $("#viewForwardOptionsDialog > div.noteAlert").addClass('blankNoteAlert').html('You have not added note');
+						} else{
+							 $("#viewForwardOptionsDialog > div.noteAlert").removeClass('blankNoteAlert').empty();
+						}
+					}
+				}
+				return false;
+			}
+
+			var childHierarchyForwardOptionsLoaded = false;
+			
+			function viewDefaultForwardOptions() {
+				var proceedToForward = true;
+				if ($("#targetDraftsForApproval").val() > 0) {
+					var proceedWithoutApproval = confirm('You have 0 drafts for approval! Do you wish to forward without approving the draft(s)?');
+					if (!proceedWithoutApproval) {
+						proceedToForward = false;
+						window.location.href = "/ddfs/files/viewDocuments.do?_decoration=true&fileAction=viewDocs&displayFileNo=48/2019/OSPYN&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647";
+					}
+				}
+				if (proceedToForward) {
+					enablePageButtons();
+					var $viewDefaultForwardDialog = $("#viewDefaultForwardDialog").dialog({
+						autoOpen: false,
+						bgiframe: true,
+						resizable: true,
+						width:800,
+						modal: true,
+						title: 'Forward File Within Hierarchy',
+						overlay: {
+							backgroundColor: '#000',
+							opacity: 0.5
+						}
+					});	
+	
+					
+					$viewDefaultForwardDialog.dialog('option', 'buttons', 
+							{ 	
+								 'Close': function() {
+									$viewDefaultForwardDialog.dialog('close');
+								 }
+							});
+				
+					if (childHierarchyForwardOptionsLoaded == false) {
+						$("#childHierarchyForwardOptions").load( 
+								"/ddfs/files/getChildHierarchyForwardOptions.do?fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&forwardedFromSeatId=bbb2580d-5f00-4960-8d45-74e4db6c09d4");
+						childHierarchyForwardOptionsLoaded = true;
+					}
+				
+					$viewDefaultForwardDialog.dialog('open');
+					if(document.getElementById("notesFrame")!=undefined){
+						if(document.getElementById("notesFrame").contentWindow.getHtmlNote 
+								&& ''==$.trim(document.getElementById("notesFrame").contentWindow.getHtmlNote())) {
+							 $("#viewDefaultForwardDialog > div.noteAlert").addClass('blankNoteAlert').html('You have not added note');
+						} else {
+							 $("#viewDefaultForwardDialog > div.noteAlert").removeClass('blankNoteAlert').empty();
+						}
+					}
+				}
+				return false;
+			}
+
+			function saveNoteFromActionBar() {
+				$("form[name='noteEditorForm']").submit();
+				return false;
+			}
+
+			function saveFileInfoFromActionBar() { 
+				$("form[name='fileInfoForm']").submit();
+				return false;
+			}
+
+			function saveSwitchViewNoteFromActionBar() {
+				top.notesFrame.handleFormSubmissionWithoutResponse(top.notesFrame.document.noteEditorForm);
+				return false;
+			}
+
+			function saveDraftFromActionBar() {
+
+				var $draftFrm = window.draftFrame.document.draftFrm;
+				var statusOfDraft = window.draftFrame.document.draftFrm.statusOfDraft.value;
+				var templateApproversSigned = window.draftFrame.document.draftFrm.signedStatus.value;				
+				if(templateApproversSigned == "Signed"){
+					var signed = "signed";
+					if (statusOfDraft == 'APPROVED') {
+						signed = "signed and approved";
+					}
+					conf = confirm("This Draft is already "+signed+". Any modification requires further signing.\nIf you want to save the Print Options ONLY, use 'Save Print Options'.");
+					if(!conf) {
+						return false;
+					}
+					window.draftFrame.disableButtons();
+				}
+				else if (statusOfDraft == 'APPROVED') {
+					window.draftFrame.disableButtons();
+					var conf = false;
+					if(statusOfDraft == 'APPROVED') { 
+						conf = confirm("This Draft is already approved. Any modification requires additonal Approval.\nIf you want to save the Print Options ONLY, use 'Save Print Options'.");
+						if(!conf) {
+							return false;
+						}
+					}
+				}
+
+				disableDraftButtonsInActionBar();
+				window.draftFrame.saveDraftFromActionBar();
+				
+				return false;
+			}
+
+			function approveDraftFromActionBar() {
+
+				var $draftFrm = window.draftFrame.document.draftFrm;
+				var statusOfDraft = window.draftFrame.document.draftFrm.statusOfDraft.value;
+				if (statusOfDraft == 'NOT_APPROVED' || statusOfDraft == '') {
+					window.draftFrame.disableButtons();
+					window.draftFrame.approveDraftFromActionBar();
+					var draftNo = window.draftFrame.getDraftNo();
+					removeDraftListingInActionbar(draftNo);
+				}
+
+				disableDraftButtonsInActionBar();
+				enableDraftSaveAction();
+				return false;
+			}
+			
+			function removeDraftListingInActionbar(draftNo) {
+				if (draftNo != null && draftNo != '') {
+					$('#' + draftNo).remove();
+					if (window.opener && window.opener.refreshData) {
+						window.opener.refreshData();
+					}
+				}
+			}
+			function viewDraftPreview() {
+				if (document.viewPreviewFromActionbar) {
+					viewPreviewFromActionbar();
+				} else {
+					window.draftFrame.viewPreviewFromActionbar();
+				}
+			}
+
+			function createDocFromActionBar() {
+				//conf = confirm("Please confirm the format of PDF through 'Preview'. Format/Content change of PDF after document creation is not allowed. Do you want to continue?");
+				//from here by khader 
+						
+				var $confirmDocumentCreation = $("#confirmDocumentCreation").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:255,
+					width:380,
+					modal: true,
+					title: 'Confirm Document Creation',
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+			
+				$confirmDocumentCreation.dialog('option', 'buttons', 
+				{ 	
+					'Ok': function() {
+						if(document.getElementById('isStockFileCheckbox').checked == true) {
+							window.draftFrame.document.getElementById('isStockFile').checked = true;
+						}
+						else {
+							window.draftFrame.document.getElementById('isStockFile').checked = false;
+						}
+						window.draftFrame.createDocFromActionBar();
+						$('a[name^="createDocFromActionBar"]').css("color","#AAAAAA");
+						$('a[name^="createDocFromActionBar"]').removeAttr("onclick");
+						$confirmDocumentCreation.dialog('close');
+						disableDraftButtonsInActionBar();
+				 	},
+				 	'Cancel': function() {
+				 		
+						$confirmDocumentCreation.dialog('close');
+					}
+				});
+				document.getElementById('isStockFileCheckbox').checked = false;
+				$confirmDocumentCreation.dialog('open');	
+				
+			}
+			
+			function disableDraftButtonsInActionBar() {
+				disableDraftApproveAction();
+				disableDraftPreviewAction();
+				disableDraftSaveAction();
+				disableDocCreateAction();
+			}
+			
+			
+			function enableDraftSaveAction() {
+				$("#draftSaveBtnFromActionBar").show();
+			}
+
+			function disableDraftSaveAction() {
+				$("#draftSaveBtnFromActionBar").hide();
+			}
+
+			function enableDraftPreviewAction() {
+				$("#draftPreviewBtnFromActionBar").show();
+			}
+
+			function disableDraftPreviewAction() {
+				$("#draftPreviewBtnFromActionBar").hide();
+			}
+
+			function enableDraftApproveAction() {
+				$("#draftApproveBtnFromActionBar").show();
+			}
+
+			function disableDraftApproveAction() {
+				$("#draftApproveBtnFromActionBar").hide();
+			}
+
+			function enableDocCreateAction() {
+				$("#draftCreateDocBtnFromActionBar").show();
+			}
+
+			function disableDocCreateAction() {
+				$("#draftCreateDocBtnFromActionBar").hide();
+			}
+
+			function disableSaveNoteAction() {
+				$("#saveSimpleNoteFromActionBar").hide();
+				$("#saveNoteFromActionBar").hide();
+			}
+
+			function disableBookmarkAction() {
+				$("#createBookmarkFromActionBar").hide();
+			}
+			
+			function shareFile(){
+				$("#shareFile").remove();
+				var $fileShareDialog = $("<div id='shareFile' style='padding:5px 5px 5px 5px;'></div>").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:500,
+					width:900,
+					modal: true,
+					title: 'Share File',
+					close: function close() {						
+						$("#shareFile").dialog("destroy").remove();
+					},
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+				$fileShareDialog.dialog('option', 'buttons', {
+			 		'Share':function(){
+				 			CKEDITOR.instances['shareComment'].updateElement();			 			
+							jQuery('#selectedSeats').each(function () {
+					            jQuery('#selectedSeats option').attr("selected", "selected");
+					        });
+							
+							var action = $("#action").val();
+							if(action == 'SEAT'){
+								validateSharedFile();
+							}else if(action == 'EMAIL'){
+								if ($("#isPublicShare").is(':checked')) {
+									var sharedPassword = $("#sharedPassword").val();
+									if(typeof sharedPassword === "undefined" ||null == sharedPassword || "" == sharedPassword){
+										displayCommonAlertDialog("Please enter valid Protected Password.");
+									}else if(sharedPassword.match(/([a-z])/) && sharedPassword.match(/([A-Z])/) && (sharedPassword.match(/([0-9])/) || sharedPassword.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) && sharedPassword.length >= 6)  
+									{
+										fileShareToEmail();
+										
+									}else{
+										displayCommonAlertDialog("Your password must be atleast 6 characters.It must contain one upper and  lower case letters, and at least one number or symbol.");
+									}
+								}else{
+									fileShareToEmail();
+								}
+								
+							}
+				 		
+					
+			 		 },
+			 		 'Close': function() {
+						// $fileShareDialog.dialog('close').dialog('destroy');
+						$fileShareDialog.dialog('close');
+						 $("#shareFile").remove();
+					 }
+					 
+				});
+				$("#shareFile").load("/ddfs/files/shareFile.do?action=SEAT&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647");
+				$fileShareDialog.dialog('open');
+				CKEDITOR.on('instanceReady', function() { $fileShareDialog.scrollTop(0); });
+				return false;
+			}
+			function validateSharedFile(){
+				var groupOrDepartmentSelector = $("#groupOrDepartmentSelector").val();
+				if( "0" == groupOrDepartmentSelector){
+					if(null == jQuery('#selectedSeats').val()){
+						displayCommonAlertDialog("Please select a seat.");
+					}else{
+						fileShareToSeat();
+					}
+					
+				}else if( "0" != groupOrDepartmentSelector){
+					var selected = "";
+					var selectedText = $("#groupOrDepartmentSelector option:selected").text();
+					selected = $("#"+groupOrDepartmentSelector+"Selector").val();
+					if(selected == ""){
+						displayCommonAlertDialog("Please select a "+selectedText+".");
+						
+					}else if($("#shareFile").find($("#specificField")).is(':checked')) {
+						if(null == jQuery('#selectedSeats').val()){
+							displayCommonAlertDialog("Please select a seat.");
+						}else{
+							fileShareToSeat();
+						}
+					}else{
+						fileShareToSeat();
+					}
+					
+					
+				}
+			}
+			function fileShareToSeat(){
+				$.post("/ddfs/files/shareFile.do?action=SEAT&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&submitType=save",$("#shareFile form[name='sharedFileForm']").serialize(),function(data){
+						if("success" == data){
+							$("#shareFile").dialog('close');
+							fileShareToSeatDialog("Document shared with the recipients.");
+						}else if("noSeats" == data){
+							displayCommonAlertDialog("Please select a seat");
+						}else if("error" == data){
+							displayCommonAlertDialog("Currently unable to process your request. Please contact administrator");
+						}else if("nogroup" == data){
+							displayCommonAlertDialog("Please select "+$('#groupOrDepartmentSelector option:selected').text());
+						} else{
+							if(null != data && data.startsWith('ERROR')){
+								var errorMessage =  data.split(":");
+								if(null != errorMessage[1]){
+									displayCommonAlertDialog(errorMessage[1]);
+									$("#shareFile").dialog('close');
+									location.reload();
+								}
+							}else{
+								displayCommonAlertDialog(data);
+							}
+							
+						}
+				});
+				
+			}
+			
+			function fileShareToSeatDialog($var){
+				var $confirmationDialog = $('<div id=\"alertDialog\"><p style="margin:10px;text-align:left">' + $var + '</p></div>').dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height : 'auto',
+					width:400,
+					modal: true,
+					title: 'Alert',
+					buttons: {
+	 					Ok: function() {	 						
+	 						try {
+	 							window.opener.refreshData(); 
+	 						} catch(err) {}
+	 						location.reload();
+	 						$("#shareFile").remove();
+	 						$(this).dialog('close');
+	 					}					
+	 				}
+	 			});
+	 			$confirmationDialog.dialog("open");
+			}
+			
+			function fileShareToEmail(){
+				var emailId = $("#emailId").val();
+				if(typeof emailId === "undefined" ||null == emailId || "" == emailId){
+					displayCommonAlertDialog("Please enter valid Email ID.");
+				}else {
+					$(".ui-dialog-buttonpane button:contains('Share')").attr("disabled", true).addClass("ui-state-disabled");
+					$.post("/ddfs/files/shareFile.do?action=EMAIL&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&submitType=save",$("#shareFile form[name='sharedFileForm']").serialize(),function(data){
+							if("success" == data){
+								displayCommonAlertDialog("Document shared with the recipients.");
+								$("#shareFile").dialog('close');
+								try {
+									window.opener.refreshData(); 
+								} catch(err) {}
+								location.reload();
+								$("#shareFile").remove();
+							}else if(null != data && data.startsWith('EMAILERROR')){
+								$(".ui-dialog-buttonpane button:contains('Share')").attr("disabled", false).removeClass("ui-state-disabled");
+								var errorMessage =  data.split(":");
+								if(null != errorMessage[1]){
+									emailShareConfirmation(errorMessage[1]);
+								}
+							}
+					});
+				}
+			///}
+			}
+			function returnSharedFile(){
+				
+				for ( instance in CKEDITOR.instances ) {
+		            CKEDITOR.instances[instance].updateElement();	
+				}	
+				var $unsavedNote = '';
+				try {
+					if(document.noteEditorForm) {
+						
+						$unsavedNote = $('#usernoteeditor').val();
+					} else if (top.notesFrame && top.notesFrame.document && top.notesFrame.document.noteEditorForm) {
+						$unsavedNote = document.getElementById("notesFrame").contentWindow.getHtmlNote();
+					} 
+				} catch(e) {
+					if (top.notesFrame && top.notesFrame.document && top.notesFrame.document.noteEditorForm) {
+						$unsavedNote = document.getElementById("notesFrame").contentWindow.getPlainTextNote();
+					} 
+				}
+				$("#returnSharedDialog").dialog({
+					width : 400,
+					height : 200,
+					modal : true,
+					resizable: false,
+					title : 'Return Shared File',
+					'buttons': {
+						'Return': function() {
+							var viewableToAll = $('[name^=viewableToAll]').is(':checked');
+							$.post("/ddfs/files/file.do?fileAction=returnSharedFile&sharedFileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&viewableToAll=" + viewableToAll ,{"unSubmittedNote" : $unsavedNote,"fckEditorTRacker":"unSubmittedNote"}, function(response){
+								$("#returnSharedDialog").dialog('close');
+								if (response != null && response != '') {
+									$("#layout").html(response);
+								} else {
+									if (window.opener && window.opener.refreshData) {
+		                                 if(!window.opener.closed){
+		                                     window.opener.refreshData();
+		                                     window.close();
+		                                 }
+		                             }
+									var session = '';
+									if('EMAIL' == session ){
+										window.location.href= "/ddfs/files/fileReturnedSuccess.do?";
+									}
+								}
+								
+							});
+							
+						},
+						'Cancel' : function(){
+							$(this).dialog('close');
+						}
+					}
+				});
+			}
+			$("#confirmDocumentCreation").find($("#isStockFileCheckbox")).click(function(){
+				var isChecked = $('#isStockFileCheckbox').attr('checked')?true:false;
+				if(isChecked){
+					$('#publicStockFileSpan').show();
+				}else{
+					$('#publicStockFileSpan').hide();
+				}
+				});
+			function emailShareConfirmation(emailIds){
+				var $confirmationDialog = $("<div><label>The following email ids are not linked with DDFS.</label><br><b>"+emailIds+"</b><br> Are you sure, you want to share this document?</div>").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:250,
+					width:320,
+					modal: true,
+					zIndex: 1000,
+					title: "Confirm to share document",
+	 				buttons: {
+	 					Ok: function() {
+	 						$(".ui-dialog-buttonpane button:contains('Share')").attr("disabled", true).addClass("ui-state-disabled");
+	 						$.post("/ddfs/files/shareFile.do?action=EMAIL&conform=OK&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647&submitType=save",$("#shareFile form[name='sharedFileForm']").serialize(),function(data){
+	 								if("success" == data){
+	 									displayCommonAlertDialog("Document shared with the recipients.");
+	 									$("#shareFile").dialog('close');
+	 									try {
+	 										window.opener.refreshData(); 
+	 									} catch(err) {}
+	 									location.reload();
+	 									$("#shareFile").remove();
+	 								}
+	 						});
+	 					},
+	 					Cancel:function() {
+	 						$(this).dialog("close");
+	 						
+	 					}
+	 						
+	 				}
+	 			});
+	 			$confirmationDialog.dialog("open");
+			}
+		</script>
+
+		<input type="hidden"  id="info_username" value="Antony George"/>
+		<input type="hidden" id="info_seatname" value="SEAT2"/>
+		<span class="helper-icon"></span>
+
+		<div id="sessionTimedOutDialog" title="Re-Login" style="display:none" >
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+			You session is not valid. Please re-login.</p>
+		</div>
+
+		<div id="confirmActionDialog" title="Confirmation" style="display:none">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+			Do you wish to proceed?</p>
+		</div>
+
+		<div id="viewExportablesDialog" title="Export File" style="display:none"></div>
+		<div id="sharedFileSeatsDialogDiv" style="display:none"></div>
+		<div  id="popup_box" style="display: none;"></div>
+				<div id="chitDialog" style="display:none;">
+	 			<a  id="closeBtn" value="Close" onclick="dialogClose();">X</a>
+	<div class="chit-dialog-inner">
+		
+	 </div>
+	<!--  <input type="button" id="closeBtn" value="Close" onclick="dialogClose();" class="form-button float-right"/> -->
+</div>
+		
+	<script>
+	
+function showChitDialog() { 
+	
+	// $("#chitDialog").remove();
+	var $addRefDialog = $("#chitDialog").dialog({
+		autoOpen: false,
+		bgiframe: true,
+		resizable: false,
+		height:'auto',
+		width:500,
+		modal: true,
+		//position: 'center'
+		
+	
+	});
+
+	$(".ui-dialog-titlebar").hide();
+	$addRefDialog.dialog('open');
+	return false;
+}
+function dialogClose(){
+	 $("#chitDialog").remove();
+}
+	var values, index;
+
+			function loadView(urlToLoad) {
+					window.location = urlToLoad;
+			}
+
+			function viewExportables() {
+				var width = 850;
+				var height = 500;
+				
+				var $viewExportablesDialog = $("#viewExportablesDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:height,
+					width:width,
+					modal: true,
+					title: 'Export File',
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+
+				var startTime = 0.0;
+				var endTime = 24.0;
+				
+				var time = 11 + "." + 39;
+				if(startTime <= time && endTime >= time) {
+					$viewExportablesDialog.dialog('option', 'buttons',
+						{
+						 'Export File As ZIP': function() {
+							$("#fileType").val("zip");
+							if($("#curFileDivId :checked").size() > 0 || $('#note').is(':checked')|| $('#noteWithAttacment').is(':checked')|| $('#exportScratchpad').is(':checked') || $('#exportUnsubmittedNote').is(':checked')  || $('#referenceFileListing').is(':checked')) {
+								//newwin = window.open('','5fef2c78-e97a-4d79-a9a2-2d2678a4c647','menubar=no,toolbar=no,scrollbars=1,location=no');
+								//newwin.focus();
+								document.forms['fileExportForm'].submit();
+								$viewExportablesDialog.dialog('close');
+							}
+							else {
+								displayCommonMessageDialog("Please Select Current File or Note File.");
+							}
+						 },
+						 'Export File As PDF': function() {
+							 
+								 var notesFrom = $("#viewExportablesDialog").find($("#noteNoFrom")).val();
+								 var notesTo = $("#viewExportablesDialog").find($("#noteNoTo")).val();
+								 var notesFromNumber = isNumberCheck(notesFrom);
+								 var notesToNumber = isNumberCheck(notesTo);
+								 if(notesFrom != '' && notesTo != '') {									 
+									 if(!notesFromNumber && !notesToNumber) {
+										 displayCommonMessageDialog("Please enter valid note from and notes to values.");
+										 return false;
+									 }
+								 } else if(notesFrom != '' || notesTo != '') {
+									 if(notesFrom != '') {
+										 if(!notesFromNumber) {
+											 displayCommonMessageDialog("Please enter valid note from value.");
+											 return false;
+										 }										 
+									 } else {
+										 if(!notesToNumber) {
+											 displayCommonMessageDialog("Please enter valid note to value.");
+											 return false;
+										 }
+									}
+								}
+							
+							$("#fileType").val("pdf");
+							if($("#curFileDivId :checked").size() > 0 || $('#note').is(':checked')|| $('#noteWithAttacment').is(':checked')|| $('#exportScratchpad').is(':checked') || $('#exportUnsubmittedNote').is(':checked')  || $('#referenceFileListing').is(':checked')) {
+								//newwin = window.open('','5fef2c78-e97a-4d79-a9a2-2d2678a4c647','menubar=no,toolbar=no,scrollbars=1,location=no');
+								//newwin.focus();
+								document.forms['fileExportForm'].submit();
+								$viewExportablesDialog.dialog('close');
+							}
+							else {
+								displayCommonMessageDialog("Please Select Current File or Note File.");
+							}
+						 },
+						 'Close': function() {
+							$viewExportablesDialog.dialog('close');
+							$("#viewExportablesDialog").html("");
+						 }
+					});
+				} else {
+					$viewExportablesDialog.dialog('option', 'buttons',
+						{
+						 'Export File As ZIP': function() {
+							$("#fileType").val("zip");
+							if($("#curFileDivId :checked").size() > 0 || $('#note').is(':checked')|| $('#noteWithAttacment').is(':checked')|| $('#exportScratchpad').is(':checked') || $('#exportUnsubmittedNote').is(':checked')  || $('#referenceFileListing').is(':checked')) {
+								//newwin = window.open('','5fef2c78-e97a-4d79-a9a2-2d2678a4c647','menubar=no,toolbar=no,scrollbars=1,location=no');
+								//newwin.focus();
+								document.forms['fileExportForm'].submit();
+								$viewExportablesDialog.dialog('close');
+							}
+							else {
+								displayCommonMessageDialog("Please Select Current File or Note File.");
+							}
+						 },
+						 'Close': function() {
+							$viewExportablesDialog.dialog('close');
+							$("#viewExportablesDialog").html("");
+						 }
+					});
+				}
+				
+				$viewExportablesDialog.dialog('open');
+				$("#viewExportablesDialog").load('../files/viewExportables.do?_decoration=false&fileNo=5fef2c78-e97a-4d79-a9a2-2d2678a4c647');
+				return false;
+			}
+			function isNumberCheck(n) {
+				return !isNaN(parseFloat(n)) && isFinite(n);
+			}
+
+			function disablePageButtons() {
+			}
+
+			function enablePageButtons() {
+			}
+
+			function forwardDialog(formName,chit,selectName) {
+				//var select = $("#"+formName+" select[name='"+selectName+"'] option:selected").html();
+				var selIndex = document.getElementById(selectName).selectedIndex;
+				if(selIndex >= 0) {
+					var select = document.getElementById(selectName).options[document.getElementById(selectName).selectedIndex].text;
+					var selectedSeat = document.getElementById(selectName).value;
+					if(null == selectedSeat || selectedSeat == "")
+						{
+						displayCommonMessageDialog("Please select a seat to proceed.");
+						}
+					else {
+					    select=$.trim(select);
+					    chitAddDialogBox(formName,chit,select);
+					}
+				}
+			}
+
+			function chitAddDialogBox(formName, chitContent, seatName) {
+				/* if(null==seatName || seatName == "") {
+					displayCommonAlertDialog("Please select a seat to proceed.");
+					return;
+				} */
+				seatName=seatName.replace(/&amp;/g,'&');
+				/* 
+				if(false == confirm(confirmMsg)) {
+					return false;
+				} */
+				var confirmMsg =  (seatName == '' || seatName == '-- Select --'?"Are you sure you want to forward this file?":"Are you sure you want to forward this file to "+seatName+"?");
+				$('<div style="padding: 10px; max-width: 500px; word-wrap: break-word;">'+ confirmMsg +'</div>').dialog({
+					modal : true,
+					draggable: false,
+		            resizable: false,
+		            width: 'auto',
+		            title: 'Confirm',
+		            minHeight: 75,
+					'buttons': {
+					'Yes': function() {
+						displayActionInProgressDialog();
+						 try {
+							$("#viewDefaultForwardDialog").dialog('close');
+						} catch (e) {}
+						try {
+							$("#viewForwardOptionsDialog").dialog('close');
+						} catch (e) {}
+						setUnsavedNote();
+						var chitContentInput = "chitContentInput";
+						if ("fileActionForwardExpectedFrm1" == formName
+								|| "fileActionForwardExpectedFrm2" == formName
+								|| "fileActionForwardExpectedFrm3" == formName
+								|| "fileActionForwardExpectedFrm4" == formName) {
+							chitContentInput = "chitContentDefaultOptionsInput";
+						} else if ("fileActionForwardToSameDeptFrm" == formName
+								|| "fileActionForwardToOtherDeptFrm" == formName) {
+							chitContentInput = "chitContentForwardOptionsInput";
+						}
+						$("#"+chitContent).val(document.getElementById(chitContentInput).value);
+						$("#"+formName).submit();
+						
+						$(this).dialog('close');
+					},'No': function() {
+						$(this).dialog('close');
+						return;
+					}
+					}	
+				});
+				
+				return false; 
+			}
+
+			function setUnsavedNote() {
+				var $unsavedNote = '';
+				try {
+					if(document.noteEditorForm) {
+						$unsavedNote = $('#usernoteeditor').html();
+					} else if (top.notesFrame && top.notesFrame.document && top.notesFrame.document.noteEditorForm) {
+						$unsavedNote = document.getElementById("notesFrame").contentWindow.getHtmlNote();
+					}
+				} catch(e) {
+					if (top.notesFrame && top.notesFrame.document && top.notesFrame.document.noteEditorForm) {
+						$unsavedNote = document.getElementById("notesFrame").contentWindow.getPlainTextNote();
+					}
+				}				
+
+				if (document.expSeatFrm1 && document.expSeatFrm1.unSubmittedNote) {
+					document.expSeatFrm1.unSubmittedNote.value = $unsavedNote;
+					addfckEditorTracker($(document.expSeatFrm1),'unSubmittedNote');
+
+				}
+				if (document.expSeatFrm2 && document.expSeatFrm2.unSubmittedNote) {
+					document.expSeatFrm2.unSubmittedNote.value = $unsavedNote;
+					addfckEditorTracker($(document.expSeatFrm2),'unSubmittedNote');
+
+				}
+				if (document.expSeatFrm3 && document.expSeatFrm3.unSubmittedNote) {
+					document.expSeatFrm3.unSubmittedNote.value = $unsavedNote;
+					addfckEditorTracker($(document.expSeatFrm3),'unSubmittedNote');
+
+				}
+				if (document.expSeatFrm4 && document.expSeatFrm4.unSubmittedNote) {
+					document.expSeatFrm4.unSubmittedNote.value = $unsavedNote;
+					addfckEditorTracker($(document.expSeatFrm4),'unSubmittedNote');
+
+				}
+				if (document.deptSeatFrm && document.deptSeatFrm.unSubmittedNote) {
+					document.deptSeatFrm.unSubmittedNote.value = $unsavedNote;
+					addfckEditorTracker($(document.deptSeatFrm),'unSubmittedNote');
+
+				}
+				if (document.otherDeptSeatFrm && document.otherDeptSeatFrm.unSubmittedNote) {
+					document.otherDeptSeatFrm.unSubmittedNote.value = $unsavedNote;
+					addfckEditorTracker($(document.otherDeptSeatFrm),'unSubmittedNote');
+
+				}
+			}
+
+
+
+			function togglediv(obj) {
+				var name = obj.id;
+				var box = document.getElementById(name + 'Box');
+				var expSeat= document.getElementById('expSeat');
+				if (box) {
+					var state = box.style.display;
+				    if (state == 'block') {
+				    	box.style.display = 'none';
+				    	expSeat.style.display='block';
+				    } else {
+				    	box.style.display = 'block';
+				    	expSeat.style.display='none';
+				    }
+				}
+			}
+
+			function displayReCallFileDialog($action, $frmid) {
+				var $reCallFileDialog = $("#reCallFileDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:180,
+					modal: true,
+					title: 'Pull File',
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+
+				$reCallFileDialog.dialog('option', 'buttons',
+						{ 	'ReCall File': function() {
+								$(this).dialog('close');
+								disablePage();
+								$.post($action, $("form[id^='" + $frmid + "']").serialize(),
+										function(data){
+											JSONObject = eval( "(" + data + ")" );
+								            if (JSONObject.ERROR != 'true' && window.opener) {
+								            	window.opener.refreshData();
+								            	$('#fileActionTakeContainer').hide();
+								            	return displayFileTakenDialog();
+								            } else if (JSONObject.ERROR == 'true') {
+								            	openPopUpWindow(JSONObject.MSG);
+								            }
+											return false;
+										});
+							 },
+							 'Cancel': function() {
+								$(this).dialog('close');
+								return false;
+							 }
+						});
+				$reCallFileDialog.dialog('open');
+				return false;
+			}
+
+			function displayTakeFileDialog($action, $frmid) {
+
+				var $takeFileDialog = $("#takeFileDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:320,
+					width:400,
+					modal: true,
+					title: 'Pull File',
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+
+				$takeFileDialog.dialog('option', 'buttons',
+						{ 	'Pull File': function() {
+								var commentStr = $.trim($("#pullFileComment").val());
+								if(commentStr.length == 0|| null == commentStr || "" == commentStr){
+									displayCommonMessageDialog("Please enter a reason for pulling this file");
+									return false;
+								}else{
+									$('#pullbackComment').val($('#pullFileComment').val());
+									$(this).dialog('close');
+									disablePage();
+									$.post($action, $("form[id^='" + $frmid + "']").serialize(),
+											function(data){
+												JSONObject = eval( "(" + data + ")" );
+									            if (JSONObject.ERROR != 'true' && window.opener) {
+									            	window.opener.refreshData();
+									            	$('#fileActionTakeContainer').hide();
+									            	return displayFileTakenDialog();
+									            } else if (JSONObject.ERROR == 'true') {
+									            	openPopUpWindow(JSONObject.MSG);
+									            }
+												return false;
+											});
+								}
+							 },
+							 'Cancel': function() {
+								$(this).dialog('close');
+								return false;
+							 }
+						});
+				$takeFileDialog.dialog('open');
+				return false;
+			}
+
+			function displayFileTakenDialog() {
+
+				var $fileTakenDialog = $("#fileTakenDialog").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:180,
+					modal: true,
+					overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+				$('#fileTakenDialog').dialog('option', 'buttons',
+						{ 	'OK': function() {
+								var $win=window.open("","_self");
+								$win.close();
+							 }
+						});
+				$("#fileTakenDialog").dialog('open');
+			}
+			function showFileTags() {
+				$("#fileTagDialogDiv").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: true,
+					height:250,
+					width:600,
+					modal: true,
+					title: 'File Tags',
+					 overlay: {
+						backgroundColor: '#000',
+						opacity: 0.5
+					}
+				});
+
+				$("#fileTagDialogDiv").dialog('option', 'buttons',
+						{
+					 	'Close': function() {
+					 			 $("#fileTagDialogDiv").dialog('close');
+					 	}
+					});
+				$("#fileTagDialogDiv").dialog('open');
+			}
+			function showFileRemark(fileNo){
+
+				 $("#FileRemarkDiv").remove();
+					var $fileRemarkDialog = $("<div id='FileRemarkDiv' style='padding:5px 5px 5px 5px;'></div>").dialog({
+						autoOpen: false,
+						bgiframe: true,
+						resizable: false,
+						height:300,
+						width:530,
+						modal: true,
+						title: 'My Remark',
+						overlay: {
+							backgroundColor: '#000',
+							opacity: 0.5
+						}
+					});
+
+
+					$fileRemarkDialog.dialog('option', 'buttons',
+								{
+							 		'Save':function(){
+							 			var remarksSave = $.trim($("#remarks").val());
+							 			if(remarksSave.length == 0|| null == remarksSave || "" == remarksSave){
+											displayCommonMessageDialog("Enter File Remark");
+											return false;
+										}
+										$.post("/ddfs/files/addFileRemarks.do",$("#FileRemarkDiv form[name='remarkForm']").serialize(),function(){
+											displayCommonMessageDialog('Your Remark have been Saved.');
+											
+											try {
+												window.opener.refreshData();
+											} catch(err) {}
+										});
+										$fileRemarkDialog.dialog('destroy').remove();
+							 		 },
+							 		 'Close': function() {
+							 			$fileRemarkDialog.dialog('destroy').remove();
+									 }
+						});
+					$("#FileRemarkDiv").load("/ddfs/files/addFileRemarks.do?fileNo="+fileNo);
+					$fileRemarkDialog.dialog('open');
+// 					if(remarksStr.length == 0|| null == remarksStr || "" == remarksStr){
+// 						$('.ui-button:contains(Delete My Remarks)').hide();
+// 					}
+					return false;
+			}
+
+			function markAsConfidential(fileNo,confidentialFile,shared){
+				$("#Confidential").remove();
+				if(shared == "true" && confidentialFile != "true"){
+					displayCommonMessageDialog("File is Shared, Please remove sharing before make it confidential. [ click tab 'view shared seats' to remove sharing. ]");
+					return false;
+				}
+				var $fileConfidentialDialog = $("<div id='Confidential' style='padding:5px 5px 5px 5px;'></div>").dialog({
+						autoOpen: false,
+						bgiframe: true,
+						resizable: false,
+						height:450,
+						width:750,
+						modal: true,
+						title: 'Manage Confidentiality',
+						overlay: {
+							backgroundColor: '#000',
+							opacity: 0.5
+						}
+					});
+					if(confidentialFile == "true"){
+						$fileConfidentialDialog.dialog('option', 'buttons',
+							{
+								'Update':function(){
+									jQuery('#selectedSeats').each(function () {
+							            jQuery('#selectedSeats option').attr("selected", "selected");
+							        });
+									if(null == jQuery('#selectedSeats').val()){
+										$('#confMessage').css("display","inline");
+										jQuery('#confMessage').html("Please select a seat");
+										return false;
+									}
+									$.post("/ddfs/files/markAsConfidential.do?submitType=save",$("#Confidential form[name='confidentialForm']").serialize(),function(data){
+										if("noSeats" == data){
+											$('#confMessage').css("display","inline");
+											jQuery('#confMessage').html("Please select a seat");
+										}else if("success" == data){
+											//$fileConfidentialDialog.dialog('close').dialog('destroy');
+											try {
+												window.opener.refreshData();
+											} catch(err) {}
+											location.reload();
+											$("#Confidential").remove();
+										}else{
+											$('#confMessage').css("display","inline");
+											jQuery('#confMessage').html(data);
+										}
+									});
+						 		 },
+						 		 'Non-Confidential': function() {
+										$.post("/ddfs/files/markAsConfidential.do?submitType=remove",$("#Confidential form[name='confidentialForm']").serialize(),function(){
+											//$fileConfidentialDialog.dialog('close').dialog('destroy');
+											try {
+												window.opener.refreshData();
+											} catch(err) {}
+											location.reload();
+										});
+										$("#Confidential").remove();
+									 },
+						 		 'Close': function() {
+									 $fileConfidentialDialog.dialog('close').dialog('destroy');
+									 $("#Confidential").remove();
+								 }
+							});
+					 }else{
+						$fileConfidentialDialog.dialog('option', 'buttons',
+						{
+								'Save':function(){
+									jQuery('#selectedSeats').each(function () {
+							            jQuery('#selectedSeats option').attr("selected", "selected");
+							        });
+									if(null == jQuery('#selectedSeats').val()){
+										$('#confMessage').css("display","inline");
+										jQuery('#confMessage').html("Please select a seat");
+										return false;
+									}
+									$.post("/ddfs/files/markAsConfidential.do?submitType=save",$("#Confidential form[name='confidentialForm']").serialize(),function(data){
+										if("noSeats" == data){
+											$('#confMessage').css("display","inline");
+											jQuery('#confMessage').html("Please select a seat");
+											return false;
+										}else{
+											$fileConfidentialDialog.dialog('close').dialog('destroy');
+											try {
+												window.opener.refreshData();
+											} catch(err) {}
+											location.reload();
+											$("#Confidential").remove();
+										}
+									});
+						 		 },
+					 		 'Close': function() {
+								 $fileConfidentialDialog.dialog('close').dialog('destroy');
+								 $("#Confidential").remove();
+							 }
+
+						});
+					 }
+					$("#Confidential").load("/ddfs/files/markAsConfidential.do?fileNo="+fileNo+"&confidential="+confidentialFile);
+					$fileConfidentialDialog.dialog('open');
+					return false;
+			}
+
+			/******************* File Attachment update functions - Start ***********/
+			function openFiledialog(id,docType){
+				var fileNo=$("#fileNo").val();
+				var categoryId=$("#categoryId").val();
+				var attachmentOptions = {
+						url:"/ddfs/files/fileUpload.do?action=upload&excludeBookmark=false&tempOperation=false&fileNo="+fileNo+"&formId="+formId+"&attachmentId="+id+"&documentType="+docType,
+						beforeSubmit: function(formdata, form, options){
+							
+                        var customVersion = $('#attachUpdateForm').find($("#customVersion")).val();
+                        if (customVersion != null && customVersion !='') {
+                        	if ((customVersion.match(RegExp("\\.",'g') ) ) != null) {
+                        	var matchesCount =  (customVersion.match(RegExp("\\.",'g') ) ).length;
+                        	if (matchesCount >1) {
+                        		displayCommonMessageDialog("please enter a correct value for custom version");
+                        		$(".ui-dialog-buttonpane button:contains('Save')").button("enable");
+								$(".ui-dialog-buttonpane button:contains('Cancel')").button("enable");
+                        		return false;
+                        	} 
+                          }
+                        	var letters = /^[A-Za-z]+$/;  
+                            if(customVersion.match(letters))  
+                            {  
+                            	displayCommonMessageDialog("Please enter numeric characters or [.]"); 
+                            	$(".ui-dialog-buttonpane button:contains('Save')").button("enable");
+								$(".ui-dialog-buttonpane button:contains('Cancel')").button("enable");
+                            	return false;  
+                            }
+                        }
+
+						},
+						success:  function(response){
+							//updateFileAttribute(fileNo,categoryId);
+							try{
+								response = $.parseJSON(response);
+								$(".ui-dialog-buttonpane button:contains('Save')").button("enable");
+								$(".ui-dialog-buttonpane button:contains('Cancel')").button("enable");
+								displayCommonMessageDialog(response.ERROR_MSG);
+							}catch(err){
+								$("#updateDiv").dialog("destroy").remove();
+								location.reload();
+							}
+							/* alert(response);
+							if (response.ERROR) {
+								displayCommonMessageDialog(response.ERROR_MSG);
+								$(".ui-dialog-buttonpane button:contains('Save')").button("enable");
+								$(".ui-dialog-buttonpane button:contains('Cancel')").button("enable");
+							} else {
+								$("#updateDiv").dialog("destroy").remove();
+								location.reload();
+							} */
+							return false;
+						},
+						error:function(jqXHR, textStatus, errorThrown){
+
+							 alert("error=="+errorThrown);
+						}
+				};
+				var url="/ddfs/files/attachmentUpdate.do?_decoration=false&fileNo="+fileNo+"&categoryId="+categoryId+"&attachmentId="+id+"&docType="+docType;
+				var $updateDialog = $("<div id='updateDiv'></div>").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:330,
+					width:500,
+					modal: true,
+					zIndex: 1000,
+					title: "Update attachment",
+					close: function(){
+						$updateDialog.dialog("destroy").remove();
+				    },
+					buttons: {
+						Save: function(){
+
+									var $file = $(':input[id^="attachmentFile"]',$("#attachmentDialog")).val();
+								     if ($file == '') {
+										alert('Enter valid file');
+										return false;
+									} else {
+
+									$('#attachUpdateForm').ajaxSubmit(attachmentOptions);
+									$(".ui-dialog-buttonpane button:contains('Save')").button("disable");
+									$(".ui-dialog-buttonpane button:contains('Cancel')").button("disable");
+//											return false;
+
+										/* $.ajax({
+											type: "POST",
+											dataType: 'json',
+											url:"/ddfs/files/fileUpload.do?action=upload&excludeBookmark=false&tempOperation=false&fileNo="+fileNo+"&formId="+formId+"&attachmentId="+id+"&documentType="+docType,
+											success:  function(response){
+												alert("h");
+												updateFileAttribute(fileNo,categoryId);
+
+											}
+										}); */
+									}
+
+							//myVault.setURL("/ddfs/files/fileUpload.do?action=upload&excludeBookmark=false&tempOperation=false&fileNo="+fileNo+"&formId="+formId+"&attachmentId="+id+"&documentType=MainDocument");
+
+
+
+						},
+						Cancel: function(){
+							$updateDialog.dialog("destroy").remove();
+
+						}
+					}
+				}).load(url,function(){
+					$updateDialog.dialog("open");
+				})
+				/* myVault.setURL("/ddfs/files/fileUpload.do?action=upload&excludeBookmark=false&tempOperation=false&fileNo="+fileNo+"&formId="+formId+"&attachmentId="+id+"&documentType=MainDocument");
+				$(".dhx_vault_button").trigger('click'); */
+			}
+
+			function openVersionDialog(attachmentId){
+				var fileNo=$("#fileNo").val();
+				var url="/ddfs/files/attachmentVersions.do?_decoration=false&attachmentId="+attachmentId+"&fileNo="+fileNo;
+				var $versionDialog = $("<div id='versionsDiv'></div>").dialog({
+					autoOpen: false,
+					bgiframe: true,
+					resizable: false,
+					height:460,
+					width:900,
+					modal: true,
+					zIndex: 1000,
+					title: "Attachment versions",
+					close: function(){
+						$versionDialog.dialog("destroy").remove();
+				    },
+					buttons: {
+						Cancel: function(){
+							$versionDialog.dialog("destroy").remove();
+
+						}
+					}
+				}).load(url,function(){
+					$versionDialog.dialog("open");
+				})
+			}
+			function updateFileAttribute(fileNo,categoryId) {
+				$.post('/ddfs/files/attributes.do?_decoration=false&fileNo='+fileNo+"&categoryId="+categoryId, $("#categoryUpdateForm").serialize(),
+							function(data){
+								openPopUpWindow('<div style="text-align:left">' + data + '</div>');
+								return false;
+							});
+
+				$("#updateDiv").dialog("destroy").remove();
+				location.reload();
+				return false;
+
+			}
+			/******************* File Attachment update functions - End ***********/
+function workingCopy(attachmentId){
+	var fileNo=$("#fileNo").val();
+	var categoryId=$("#categoryId").val();
+	var url="/ddfs/files/workingCopy.do?_decoration=false&fileNo="+fileNo+"&categoryId="+categoryId+"&attachmentId="+attachmentId;
+	var attachmentOptions = {
+			url:"/ddfs/files/fileUpload.do?action=upload&excludeBookmark=false&tempOperation=false",
+			beforeSubmit: function(formdata, form, options){
+			},
+			success:  function(response){
+				$('#ajaxLoader').css('display','none');
+				$("#workingCopyAttachmentDialog").dialog('destroy').remove();
+				location.reload();
+			}
+	};
+	var $attachmentDialog = $("<div id='workingCopyAttachmentDialog'></div>").dialog({
+		autoOpen: false,
+		bgiframe: true,
+		resizable: false,
+		height:200,
+		width:500,
+		modal: true,
+		title: 'Upload working copy',
+		close: function(){
+			$attachmentDialog.dialog("destroy").remove();
+	    },
+		buttons: {
+			Attach:function(){
+
+				var $file = $(':input[id^="attachmentFile"]',$("#attachmentDialog")).val();
+			     if ($file == '') {
+					alert('Enter valid file');
+					return false;
+				} else {
+
+					$(".ui-dialog-buttonset .ui-button").attr("disabled","disabled");
+					$('#ajaxLoader').css('display','block');
+					$('#workingCopyForm').ajaxSubmit(attachmentOptions);
+					return false;
+				}
+
+			},
+			Cancel: function(){
+				$attachmentDialog.dialog('destroy').remove();
+	           return false;
+			}
+		}
+	}).load(url,function(){
+		$attachmentDialog.dialog('open');
+	});
+
+}
+function viewWorkingCopy(id){
+	$("#workingCopy"+id).toggle();
+
+}
+
+function showHideAttachmentDetails(){
+	if ($("#isBookMarkItem").is(':checked')){
+		$("#attachmentDetails").hide();
+	} else if ($("#attachmentDiv").is(':checked')){
+		$("#attachmentDetails").show();
+	}
+
+}
+		</script>
+
+	</body>
+</html>
+
